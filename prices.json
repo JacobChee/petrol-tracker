@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-04-12T00:00:00+00:00",
+  "fx": {
+    "rate": 0.316,
+    "date": "2026-04-11",
+    "source": "frankfurter.app"
+  },
+  "malaysia": {
+    "date": "2026-04-09",
+    "ron95": 4.27,
+    "ron97": 5.35,
+    "diesel": 6.72,
+    "source": "api.data.gov.my",
+    "note": "RON95 subsidised rate (RM1.99) not applicable to SG vehicles. Unsubsidised rate shown."
+  },
+  "singapore": {
+    "date": "2026-04-12",
+    "source": "petrolprice.sg",
+    "prices": {
+      "ron92": [
+        {"brand": "SPC",    "price": 3.39},
+        {"brand": "Esso",   "price": 3.43},
+        {"brand": "Caltex", "price": 3.43}
+      ],
+      "ron95": [
+        {"brand": "Shell",        "price": 3.42},
+        {"brand": "SPC",          "price": 3.42},
+        {"brand": "Esso",         "price": 3.46},
+        {"brand": "Caltex",       "price": 3.47},
+        {"brand": "Sinopec",      "price": 3.47},
+        {"brand": "Smart Energy", "price": 3.66}
+      ],
+      "ron98": [
+        {"brand": "SPC",          "price": 3.93},
+        {"brand": "Shell",        "price": 3.94},
+        {"brand": "Sinopec",      "price": 3.97},
+        {"brand": "Esso",         "price": 3.98},
+        {"brand": "Smart Energy", "price": 4.21}
+      ],
+      "premium": [
+        {"brand": "Sinopec",           "price": 4.10},
+        {"brand": "Shell V-Power Nitro+", "price": 4.16},
+        {"brand": "Caltex",            "price": 4.16}
+      ],
+      "diesel": [
+        {"brand": "SPC",          "price": 4.62},
+        {"brand": "Esso",         "price": 4.68},
+        {"brand": "Shell",        "price": 4.68},
+        {"brand": "Caltex",       "price": 4.68},
+        {"brand": "Sinopec",      "price": 4.68},
+        {"brand": "Smart Energy", "price": 4.88}
+      ]
+    }
+  },
+  "errors": []
+}

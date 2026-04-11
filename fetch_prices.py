@@ -263,6 +263,7 @@ def scrape_motorist_sg():
 # ─────────────────────────────────────────────────────────────
 def fetch_sg_prices():
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    primary_err_msg = None
 
     print("  Trying petrolprice.sg (primary)...")
     try:
@@ -273,8 +274,9 @@ def fetch_sg_prices():
             "source": "petrolprice.sg",
             "fallback_used": False
         }
-    except Exception as primary_err:
-        print(f"  petrolprice.sg FAILED: {primary_err}")
+    except Exception as e:
+        primary_err_msg = str(e)
+        print(f"  petrolprice.sg FAILED: {primary_err_msg}")
         print("  Auto-switching to motorist.sg (fallback)...")
 
     try:
@@ -284,12 +286,12 @@ def fetch_sg_prices():
             "prices": prices,
             "source": "motorist.sg",
             "fallback_used": True,
-            "fallback_reason": str(primary_err)
+            "fallback_reason": primary_err_msg
         }
     except Exception as fallback_err:
         raise RuntimeError(
             f"Both SG scrapers failed.\n"
-            f"  Primary   (petrolprice.sg): {primary_err}\n"
+            f"  Primary   (petrolprice.sg): {primary_err_msg}\n"
             f"  Fallback  (motorist.sg):    {fallback_err}"
         )
 

@@ -380,17 +380,17 @@ const GRADES = [
 ];
 
 const JB_STATIONS = [
-  { name:'Petronas Jln Skudai',   addr:'Jln Skudai, JB',         dist:'~3km from CW' },
-  { name:'Shell Larkin',          addr:'Jln Garuda, Larkin, JB', dist:'~5km from CW' },
-  { name:'Caltex Medini',         addr:'Near Medini Educity, JB',dist:'~8km from CW' },
-  { name:'Petron Jln Yahya Awal', addr:'Jln Yahya Awal, JB',     dist:'~9km from CW' },
+  { name:'Petronas Jln Skudai',   addr:'Jln Skudai, JB',         dist:'~3km from CW', maps:'https://maps.google.com/?q=Petronas+Jalan+Skudai+Johor+Bahru' },
+  { name:'Shell Larkin',          addr:'Jln Garuda, Larkin, JB', dist:'~5km from CW', maps:'https://maps.google.com/?q=Shell+Larkin+Johor+Bahru' },
+  { name:'Caltex Medini',         addr:'Near Medini Educity, JB',dist:'~8km from CW', maps:'https://maps.google.com/?q=Caltex+Medini+Johor+Bahru' },
+  { name:'Petron Jln Yahya Awal', addr:'Jln Yahya Awal, JB',     dist:'~9km from CW', maps:'https://maps.google.com/?q=Petron+Jalan+Yahya+Awal+Johor+Bahru' },
 ];
 const SG_STATIONS = [
-  { name:'Shell Woodlands Ave 2',   addr:'Woodlands Ave 2',           dist:'~3km',  brands:{ ron92:null,    ron95:'Shell',   ron98:'Shell',   premium:'Shell',   diesel:'Shell'   }},
-  { name:'SPC Woodlands Ring Rd',   addr:'Woodlands Ring Rd',         dist:'~4km',  brands:{ ron92:'SPC',   ron95:'SPC',     ron98:'SPC',     premium:null,      diesel:'SPC'     }},
-  { name:'Esso Woodlands Ind Park', addr:'Woodlands Industrial Park', dist:'~5km',  brands:{ ron92:'Esso',  ron95:'Esso',    ron98:'Esso',    premium:null,      diesel:'Esso'    }},
-  { name:'Caltex Admiralty Rd W',   addr:'Admiralty Rd W',            dist:'~6km',  brands:{ ron92:'Caltex',ron95:'Caltex', ron98:null,      premium:'Caltex',  diesel:'Caltex'  }},
-  { name:'Sinopec Kranji',          addr:'Kranji Rd',                 dist:'~7km',  brands:{ ron92:null,    ron95:'Sinopec', ron98:'Sinopec', premium:'Sinopec', diesel:'Sinopec' }},
+  { name:'Shell Woodlands Ave 2',   addr:'Woodlands Ave 2',           dist:'~3km', maps:'https://maps.google.com/?q=Shell+Woodlands+Avenue+2+Singapore',        brands:{ ron92:null,    ron95:'Shell',   ron98:'Shell',   premium:'Shell',   diesel:'Shell'   }},
+  { name:'SPC Woodlands Ring Rd',   addr:'Woodlands Ring Rd',         dist:'~4km', maps:'https://maps.google.com/?q=SPC+Woodlands+Ring+Road+Singapore',          brands:{ ron92:'SPC',   ron95:'SPC',     ron98:'SPC',     premium:null,      diesel:'SPC'     }},
+  { name:'Esso Woodlands Ind Park', addr:'Woodlands Industrial Park', dist:'~5km', maps:'https://maps.google.com/?q=Esso+Woodlands+Industrial+Park+Singapore',   brands:{ ron92:'Esso',  ron95:'Esso',    ron98:'Esso',    premium:null,      diesel:'Esso'    }},
+  { name:'Caltex Admiralty Rd W',   addr:'Admiralty Rd W',            dist:'~6km', maps:'https://maps.google.com/?q=Caltex+Admiralty+Road+West+Singapore',       brands:{ ron92:'Caltex',ron95:'Caltex', ron98:null,      premium:'Caltex',  diesel:'Caltex'  }},
+  { name:'Sinopec Kranji',          addr:'Kranji Rd',                 dist:'~7km', maps:'https://maps.google.com/?q=Sinopec+Kranji+Road+Singapore',              brands:{ ron92:null,    ron95:'Sinopec', ron98:'Sinopec', premium:'Sinopec', diesel:'Sinopec' }},
 ];
 
 // ── STATE ─────────────────────────────────────────────────────
@@ -590,16 +590,16 @@ function renderStations() {
 
   const minP = Math.min(...list.map(s=>s.price));
   document.getElementById('st-list').innerHTML = list.map(s=>`
-    <div class="scard${s.price===minP?' best':''}">
+    <a class="scard${s.price===minP?' best':''}" href="${s.maps}" target="_blank" rel="noopener" style="text-decoration:none;display:flex;justify-content:space-between;align-items:center;gap:12px;">
       <div>
-        <div class="s-name">${s.country==='jb'?'🇲🇾':'🇸🇬'} ${s.name}${s.price===minP?'<span class="best-tag">Cheapest</span>':''}</div>
+        <div class="s-name">${s.country==='jb'?'🇲🇾':'🇸🇬'} ${s.name}${s.price===minP?'<span class="best-tag">Cheapest</span>':''} <span style="font-size:10px;color:var(--muted);font-family:var(--mono)">↗ maps</span></div>
         <div class="s-addr">${s.addr} · ${s.dist}</div>
       </div>
       <div>
         <div class="s-price" style="color:var(--orange)">SGD ${fmt(s.price)}</div>
         ${s.myR?`<div class="s-rm">RM ${s.myR}/L</div>`:''}
       </div>
-    </div>`).join('');
+    </a>`).join('');
 }
 
 // ── TABS ──────────────────────────────────────────────────────

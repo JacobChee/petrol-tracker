@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-12T00:00:00+00:00",
+  "generated_at": "2026-04-11T22:00:11.671905+00:00",
   "fx": {
-    "rate": 0.316,
-    "date": "2026-04-11",
+    "rate": 0.32129,
+    "date": "2026-04-10",
     "source": "frankfurter.app"
   },
   "malaysia": {
@@ -11,46 +11,107 @@
     "ron97": 5.35,
     "diesel": 6.72,
     "source": "api.data.gov.my",
-    "note": "RON95 subsidised rate (RM1.99) not applicable to SG vehicles. Unsubsidised rate shown."
+    "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-04-12",
-    "source": "petrolprice.sg",
+    "date": "2026-04-11",
     "prices": {
-      "ron92": [
-        {"brand": "SPC",    "price": 3.39},
-        {"brand": "Esso",   "price": 3.43},
-        {"brand": "Caltex", "price": 3.43}
-      ],
-      "ron95": [
-        {"brand": "Shell",        "price": 3.42},
-        {"brand": "SPC",          "price": 3.42},
-        {"brand": "Esso",         "price": 3.46},
-        {"brand": "Caltex",       "price": 3.47},
-        {"brand": "Sinopec",      "price": 3.47},
-        {"brand": "Smart Energy", "price": 3.66}
-      ],
       "ron98": [
-        {"brand": "SPC",          "price": 3.93},
-        {"brand": "Shell",        "price": 3.94},
-        {"brand": "Sinopec",      "price": 3.97},
-        {"brand": "Esso",         "price": 3.98},
-        {"brand": "Smart Energy", "price": 4.21}
+        {
+          "brand": "SPC",
+          "price": 3.93
+        },
+        {
+          "brand": "Shell",
+          "price": 3.94
+        },
+        {
+          "brand": "Sinopec",
+          "price": 3.97
+        },
+        {
+          "brand": "Esso",
+          "price": 3.98
+        }
       ],
       "premium": [
-        {"brand": "Sinopec",           "price": 4.10},
-        {"brand": "Shell V-Power Nitro+", "price": 4.16},
-        {"brand": "Caltex",            "price": 4.16}
+        {
+          "brand": "Sinopec",
+          "price": 4.1
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.16
+        },
+        {
+          "brand": "Shell",
+          "price": 4.2
+        }
+      ],
+      "ron95": [
+        {
+          "brand": "Shell",
+          "price": 3.42
+        },
+        {
+          "brand": "SPC",
+          "price": 3.42
+        },
+        {
+          "brand": "Esso",
+          "price": 3.46
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.47
+        },
+        {
+          "brand": "Sinopec",
+          "price": 3.47
+        }
+      ],
+      "ron92": [
+        {
+          "brand": "SPC",
+          "price": 3.39
+        },
+        {
+          "brand": "Esso",
+          "price": 3.43
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.43
+        }
       ],
       "diesel": [
-        {"brand": "SPC",          "price": 4.62},
-        {"brand": "Esso",         "price": 4.68},
-        {"brand": "Shell",        "price": 4.68},
-        {"brand": "Caltex",       "price": 4.68},
-        {"brand": "Sinopec",      "price": 4.68},
-        {"brand": "Smart Energy", "price": 4.88}
+        {
+          "brand": "SPC",
+          "price": 4.42
+        },
+        {
+          "brand": "Esso",
+          "price": 4.68
+        },
+        {
+          "brand": "Shell",
+          "price": 4.68
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.68
+        },
+        {
+          "brand": "Sinopec",
+          "price": 4.68
+        }
       ]
-    }
+    },
+    "source": "motorist.sg",
+    "fallback_used": true,
+    "fallback_reason": "petrolprice.sg: price table not found"
   },
-  "errors": []
+  "errors": [
+    "petrolprice.sg scraper broke \u2014 used motorist.sg fallback. Reason: petrolprice.sg: price table not found"
+  ]
 }

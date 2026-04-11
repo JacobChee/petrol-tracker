@@ -1,0 +1,36 @@
+name: Update petrol prices
+
+on:
+  schedule:
+    # Runs at 8:00 AM Singapore time (UTC+8) = 00:00 UTC, daily
+    - cron: "0 0 * * *"
+    # Also run Thursday mornings — MY prices update Wednesday night
+    - cron: "0 1 * * 4"
+  workflow_dispatch:  # Allow manual trigger from GitHub UI
+
+jobs:
+  fetch-prices:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Run price fetcher
+        run: python fetch_prices.py
+
+      - name: Commit and push prices.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add prices.json
+          git diff --cached --quiet || git commit -m "chore: update prices $(date -u +%Y-%m-%d)"
+          git push

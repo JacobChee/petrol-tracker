@@ -296,6 +296,53 @@ def fetch_sg_prices():
         )
 
 
+
+
+# ─────────────────────────────────────────────────────────────
+# 4. HISTORY — append today's entry to history.json
+# ─────────────────────────────────────────────────────────────
+def append_history(output):
+    """Append today's RON98/RON97 data point to history.json"""
+    try:
+        with open("history.json", "r") as f:
+            history = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        history = []
+
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    # Don't double-append same date
+    if history and history[-1]["date"] == today:
+        print(f"  [history] already have entry for {today}, skipping")
+        return
+
+    sg_prices = output.get("singapore", {}).get("prices", {})
+    my = output.get("malaysia", {})
+    fx = output.get("fx", {}).get("rate", 0.316)
+
+    ron98_list = sg_prices.get("ron98", [])
+    sg_ron98 = ron98_list[0]["price"] if ron98_list else None
+    my_ron97 = my.get("ron97")
+
+    if sg_ron98 and my_ron97:
+        jb_sgd = round(my_ron97 * fx, 3)
+        entry = {
+            "date": today,
+            "sg_ron98_cheapest": sg_ron98,
+            "jb_ron97_myr": my_ron97,
+            "jb_ron97_sgd": jb_sgd,
+            "fx": fx,
+            "gap_sgd": round(sg_ron98 - jb_sgd, 3)
+        }
+        history.append(entry)
+        # Keep only last 180 days
+        history = history[-180:]
+        with open("history.json", "w") as f:
+            json.dump(history, f, indent=2)
+        print(f"  [history] appended {today}: SG={sg_ron98}, JB={jb_sgd} SGD ({my_ron97} MYR), gap={entry['gap_sgd']}")
+    else:
+        print(f"  [history] skipped — missing sg_ron98={sg_ron98} or my_ron97={my_ron97}")
+
 # ─────────────────────────────────────────────────────────────
 # MAIN
 # ─────────────────────────────────────────────────────────────
@@ -340,6 +387,9 @@ def main():
 
     with open("prices.json", "w") as f:
         json.dump(output, f, indent=2)
+
+    print("── Appending history ───────────────────────")
+    append_history(output)
 
     print("\n── Done ────────────────────────────────────")
     if output["singapore"]:

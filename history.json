@@ -1,0 +1,754 @@
+[
+  {
+    "date": "2026-01-08",
+    "sg_ron98_cheapest": 2.67,
+    "jb_ron97_myr": 3.83,
+    "jb_ron97_sgd": 1.16,
+    "fx": 0.303,
+    "gap_sgd": 1.51
+  },
+  {
+    "date": "2026-01-09",
+    "sg_ron98_cheapest": 2.67,
+    "jb_ron97_myr": 3.83,
+    "jb_ron97_sgd": 1.161,
+    "fx": 0.3031,
+    "gap_sgd": 1.509
+  },
+  {
+    "date": "2026-01-10",
+    "sg_ron98_cheapest": 2.67,
+    "jb_ron97_myr": 3.84,
+    "jb_ron97_sgd": 1.164,
+    "fx": 0.3031,
+    "gap_sgd": 1.506
+  },
+  {
+    "date": "2026-01-11",
+    "sg_ron98_cheapest": 2.68,
+    "jb_ron97_myr": 3.84,
+    "jb_ron97_sgd": 1.164,
+    "fx": 0.3032,
+    "gap_sgd": 1.516
+  },
+  {
+    "date": "2026-01-12",
+    "sg_ron98_cheapest": 2.68,
+    "jb_ron97_myr": 3.84,
+    "jb_ron97_sgd": 1.165,
+    "fx": 0.3033,
+    "gap_sgd": 1.515
+  },
+  {
+    "date": "2026-01-13",
+    "sg_ron98_cheapest": 2.68,
+    "jb_ron97_myr": 3.84,
+    "jb_ron97_sgd": 1.165,
+    "fx": 0.3034,
+    "gap_sgd": 1.515
+  },
+  {
+    "date": "2026-01-14",
+    "sg_ron98_cheapest": 2.68,
+    "jb_ron97_myr": 3.85,
+    "jb_ron97_sgd": 1.168,
+    "fx": 0.3034,
+    "gap_sgd": 1.512
+  },
+  {
+    "date": "2026-01-15",
+    "sg_ron98_cheapest": 2.69,
+    "jb_ron97_myr": 3.85,
+    "jb_ron97_sgd": 1.168,
+    "fx": 0.3035,
+    "gap_sgd": 1.522
+  },
+  {
+    "date": "2026-01-16",
+    "sg_ron98_cheapest": 2.69,
+    "jb_ron97_myr": 3.85,
+    "jb_ron97_sgd": 1.169,
+    "fx": 0.3036,
+    "gap_sgd": 1.521
+  },
+  {
+    "date": "2026-01-17",
+    "sg_ron98_cheapest": 2.69,
+    "jb_ron97_myr": 3.86,
+    "jb_ron97_sgd": 1.172,
+    "fx": 0.3036,
+    "gap_sgd": 1.518
+  },
+  {
+    "date": "2026-01-18",
+    "sg_ron98_cheapest": 2.69,
+    "jb_ron97_myr": 3.86,
+    "jb_ron97_sgd": 1.172,
+    "fx": 0.3037,
+    "gap_sgd": 1.518
+  },
+  {
+    "date": "2026-01-19",
+    "sg_ron98_cheapest": 2.69,
+    "jb_ron97_myr": 3.86,
+    "jb_ron97_sgd": 1.173,
+    "fx": 0.3038,
+    "gap_sgd": 1.517
+  },
+  {
+    "date": "2026-01-20",
+    "sg_ron98_cheapest": 2.7,
+    "jb_ron97_myr": 3.86,
+    "jb_ron97_sgd": 1.173,
+    "fx": 0.3039,
+    "gap_sgd": 1.527
+  },
+  {
+    "date": "2026-01-21",
+    "sg_ron98_cheapest": 2.7,
+    "jb_ron97_myr": 3.87,
+    "jb_ron97_sgd": 1.176,
+    "fx": 0.3039,
+    "gap_sgd": 1.524
+  },
+  {
+    "date": "2026-01-22",
+    "sg_ron98_cheapest": 2.7,
+    "jb_ron97_myr": 3.87,
+    "jb_ron97_sgd": 1.176,
+    "fx": 0.304,
+    "gap_sgd": 1.524
+  },
+  {
+    "date": "2026-01-23",
+    "sg_ron98_cheapest": 2.7,
+    "jb_ron97_myr": 3.88,
+    "jb_ron97_sgd": 1.18,
+    "fx": 0.3041,
+    "gap_sgd": 1.52
+  },
+  {
+    "date": "2026-01-24",
+    "sg_ron98_cheapest": 2.71,
+    "jb_ron97_myr": 3.88,
+    "jb_ron97_sgd": 1.18,
+    "fx": 0.3041,
+    "gap_sgd": 1.53
+  },
+  {
+    "date": "2026-01-25",
+    "sg_ron98_cheapest": 2.71,
+    "jb_ron97_myr": 3.89,
+    "jb_ron97_sgd": 1.183,
+    "fx": 0.3042,
+    "gap_sgd": 1.527
+  },
+  {
+    "date": "2026-01-26",
+    "sg_ron98_cheapest": 2.71,
+    "jb_ron97_myr": 3.89,
+    "jb_ron97_sgd": 1.184,
+    "fx": 0.3043,
+    "gap_sgd": 1.526
+  },
+  {
+    "date": "2026-01-27",
+    "sg_ron98_cheapest": 2.71,
+    "jb_ron97_myr": 3.9,
+    "jb_ron97_sgd": 1.187,
+    "fx": 0.3044,
+    "gap_sgd": 1.523
+  },
+  {
+    "date": "2026-01-28",
+    "sg_ron98_cheapest": 2.72,
+    "jb_ron97_myr": 3.9,
+    "jb_ron97_sgd": 1.187,
+    "fx": 0.3044,
+    "gap_sgd": 1.533
+  },
+  {
+    "date": "2026-01-29",
+    "sg_ron98_cheapest": 2.72,
+    "jb_ron97_myr": 3.91,
+    "jb_ron97_sgd": 1.191,
+    "fx": 0.3045,
+    "gap_sgd": 1.529
+  },
+  {
+    "date": "2026-01-30",
+    "sg_ron98_cheapest": 2.72,
+    "jb_ron97_myr": 3.92,
+    "jb_ron97_sgd": 1.194,
+    "fx": 0.3046,
+    "gap_sgd": 1.526
+  },
+  {
+    "date": "2026-01-31",
+    "sg_ron98_cheapest": 2.73,
+    "jb_ron97_myr": 3.92,
+    "jb_ron97_sgd": 1.194,
+    "fx": 0.3046,
+    "gap_sgd": 1.536
+  },
+  {
+    "date": "2026-02-01",
+    "sg_ron98_cheapest": 2.73,
+    "jb_ron97_myr": 3.93,
+    "jb_ron97_sgd": 1.197,
+    "fx": 0.3047,
+    "gap_sgd": 1.533
+  },
+  {
+    "date": "2026-02-02",
+    "sg_ron98_cheapest": 2.73,
+    "jb_ron97_myr": 3.93,
+    "jb_ron97_sgd": 1.198,
+    "fx": 0.3048,
+    "gap_sgd": 1.532
+  },
+  {
+    "date": "2026-02-03",
+    "sg_ron98_cheapest": 2.73,
+    "jb_ron97_myr": 3.94,
+    "jb_ron97_sgd": 1.201,
+    "fx": 0.3049,
+    "gap_sgd": 1.529
+  },
+  {
+    "date": "2026-02-04",
+    "sg_ron98_cheapest": 2.74,
+    "jb_ron97_myr": 3.94,
+    "jb_ron97_sgd": 1.201,
+    "fx": 0.3049,
+    "gap_sgd": 1.539
+  },
+  {
+    "date": "2026-02-05",
+    "sg_ron98_cheapest": 2.74,
+    "jb_ron97_myr": 3.95,
+    "jb_ron97_sgd": 1.205,
+    "fx": 0.305,
+    "gap_sgd": 1.535
+  },
+  {
+    "date": "2026-02-06",
+    "sg_ron98_cheapest": 2.75,
+    "jb_ron97_myr": 3.96,
+    "jb_ron97_sgd": 1.208,
+    "fx": 0.3051,
+    "gap_sgd": 1.542
+  },
+  {
+    "date": "2026-02-07",
+    "sg_ron98_cheapest": 2.75,
+    "jb_ron97_myr": 3.96,
+    "jb_ron97_sgd": 1.208,
+    "fx": 0.3051,
+    "gap_sgd": 1.542
+  },
+  {
+    "date": "2026-02-08",
+    "sg_ron98_cheapest": 2.76,
+    "jb_ron97_myr": 3.97,
+    "jb_ron97_sgd": 1.212,
+    "fx": 0.3052,
+    "gap_sgd": 1.548
+  },
+  {
+    "date": "2026-02-09",
+    "sg_ron98_cheapest": 2.76,
+    "jb_ron97_myr": 3.98,
+    "jb_ron97_sgd": 1.215,
+    "fx": 0.3053,
+    "gap_sgd": 1.545
+  },
+  {
+    "date": "2026-02-10",
+    "sg_ron98_cheapest": 2.77,
+    "jb_ron97_myr": 3.99,
+    "jb_ron97_sgd": 1.219,
+    "fx": 0.3054,
+    "gap_sgd": 1.551
+  },
+  {
+    "date": "2026-02-11",
+    "sg_ron98_cheapest": 2.77,
+    "jb_ron97_myr": 3.99,
+    "jb_ron97_sgd": 1.219,
+    "fx": 0.3054,
+    "gap_sgd": 1.551
+  },
+  {
+    "date": "2026-02-12",
+    "sg_ron98_cheapest": 2.78,
+    "jb_ron97_myr": 4.0,
+    "jb_ron97_sgd": 1.222,
+    "fx": 0.3055,
+    "gap_sgd": 1.558
+  },
+  {
+    "date": "2026-02-13",
+    "sg_ron98_cheapest": 2.78,
+    "jb_ron97_myr": 4.01,
+    "jb_ron97_sgd": 1.225,
+    "fx": 0.3056,
+    "gap_sgd": 1.555
+  },
+  {
+    "date": "2026-02-14",
+    "sg_ron98_cheapest": 2.79,
+    "jb_ron97_myr": 4.01,
+    "jb_ron97_sgd": 1.225,
+    "fx": 0.3056,
+    "gap_sgd": 1.565
+  },
+  {
+    "date": "2026-02-15",
+    "sg_ron98_cheapest": 2.79,
+    "jb_ron97_myr": 4.02,
+    "jb_ron97_sgd": 1.229,
+    "fx": 0.3057,
+    "gap_sgd": 1.561
+  },
+  {
+    "date": "2026-02-16",
+    "sg_ron98_cheapest": 2.79,
+    "jb_ron97_myr": 4.03,
+    "jb_ron97_sgd": 1.232,
+    "fx": 0.3058,
+    "gap_sgd": 1.558
+  },
+  {
+    "date": "2026-02-17",
+    "sg_ron98_cheapest": 2.8,
+    "jb_ron97_myr": 4.04,
+    "jb_ron97_sgd": 1.236,
+    "fx": 0.3059,
+    "gap_sgd": 1.564
+  },
+  {
+    "date": "2026-02-18",
+    "sg_ron98_cheapest": 2.81,
+    "jb_ron97_myr": 4.04,
+    "jb_ron97_sgd": 1.236,
+    "fx": 0.3059,
+    "gap_sgd": 1.574
+  },
+  {
+    "date": "2026-02-19",
+    "sg_ron98_cheapest": 2.81,
+    "jb_ron97_myr": 4.05,
+    "jb_ron97_sgd": 1.239,
+    "fx": 0.306,
+    "gap_sgd": 1.571
+  },
+  {
+    "date": "2026-02-20",
+    "sg_ron98_cheapest": 2.83,
+    "jb_ron97_myr": 4.07,
+    "jb_ron97_sgd": 1.246,
+    "fx": 0.3062,
+    "gap_sgd": 1.584
+  },
+  {
+    "date": "2026-02-21",
+    "sg_ron98_cheapest": 2.85,
+    "jb_ron97_myr": 4.1,
+    "jb_ron97_sgd": 1.256,
+    "fx": 0.3064,
+    "gap_sgd": 1.594
+  },
+  {
+    "date": "2026-02-22",
+    "sg_ron98_cheapest": 2.87,
+    "jb_ron97_myr": 4.12,
+    "jb_ron97_sgd": 1.264,
+    "fx": 0.3067,
+    "gap_sgd": 1.606
+  },
+  {
+    "date": "2026-02-23",
+    "sg_ron98_cheapest": 2.89,
+    "jb_ron97_myr": 4.15,
+    "jb_ron97_sgd": 1.274,
+    "fx": 0.3069,
+    "gap_sgd": 1.616
+  },
+  {
+    "date": "2026-02-24",
+    "sg_ron98_cheapest": 2.92,
+    "jb_ron97_myr": 4.17,
+    "jb_ron97_sgd": 1.281,
+    "fx": 0.3071,
+    "gap_sgd": 1.639
+  },
+  {
+    "date": "2026-02-25",
+    "sg_ron98_cheapest": 2.94,
+    "jb_ron97_myr": 4.2,
+    "jb_ron97_sgd": 1.291,
+    "fx": 0.3073,
+    "gap_sgd": 1.649
+  },
+  {
+    "date": "2026-02-26",
+    "sg_ron98_cheapest": 2.96,
+    "jb_ron97_myr": 4.22,
+    "jb_ron97_sgd": 1.298,
+    "fx": 0.3076,
+    "gap_sgd": 1.662
+  },
+  {
+    "date": "2026-02-27",
+    "sg_ron98_cheapest": 2.98,
+    "jb_ron97_myr": 4.25,
+    "jb_ron97_sgd": 1.308,
+    "fx": 0.3078,
+    "gap_sgd": 1.672
+  },
+  {
+    "date": "2026-02-28",
+    "sg_ron98_cheapest": 3.0,
+    "jb_ron97_myr": 4.27,
+    "jb_ron97_sgd": 1.315,
+    "fx": 0.308,
+    "gap_sgd": 1.685
+  },
+  {
+    "date": "2026-03-01",
+    "sg_ron98_cheapest": 3.03,
+    "jb_ron97_myr": 4.3,
+    "jb_ron97_sgd": 1.326,
+    "fx": 0.3083,
+    "gap_sgd": 1.704
+  },
+  {
+    "date": "2026-03-02",
+    "sg_ron98_cheapest": 3.06,
+    "jb_ron97_myr": 4.33,
+    "jb_ron97_sgd": 1.336,
+    "fx": 0.3086,
+    "gap_sgd": 1.724
+  },
+  {
+    "date": "2026-03-03",
+    "sg_ron98_cheapest": 3.09,
+    "jb_ron97_myr": 4.36,
+    "jb_ron97_sgd": 1.347,
+    "fx": 0.3089,
+    "gap_sgd": 1.743
+  },
+  {
+    "date": "2026-03-04",
+    "sg_ron98_cheapest": 3.11,
+    "jb_ron97_myr": 4.38,
+    "jb_ron97_sgd": 1.354,
+    "fx": 0.3091,
+    "gap_sgd": 1.756
+  },
+  {
+    "date": "2026-03-05",
+    "sg_ron98_cheapest": 3.14,
+    "jb_ron97_myr": 4.41,
+    "jb_ron97_sgd": 1.364,
+    "fx": 0.3094,
+    "gap_sgd": 1.776
+  },
+  {
+    "date": "2026-03-06",
+    "sg_ron98_cheapest": 3.17,
+    "jb_ron97_myr": 4.44,
+    "jb_ron97_sgd": 1.375,
+    "fx": 0.3097,
+    "gap_sgd": 1.795
+  },
+  {
+    "date": "2026-03-07",
+    "sg_ron98_cheapest": 3.2,
+    "jb_ron97_myr": 4.47,
+    "jb_ron97_sgd": 1.386,
+    "fx": 0.31,
+    "gap_sgd": 1.814
+  },
+  {
+    "date": "2026-03-08",
+    "sg_ron98_cheapest": 3.24,
+    "jb_ron97_myr": 4.51,
+    "jb_ron97_sgd": 1.399,
+    "fx": 0.3103,
+    "gap_sgd": 1.841
+  },
+  {
+    "date": "2026-03-09",
+    "sg_ron98_cheapest": 3.27,
+    "jb_ron97_myr": 4.54,
+    "jb_ron97_sgd": 1.41,
+    "fx": 0.3106,
+    "gap_sgd": 1.86
+  },
+  {
+    "date": "2026-03-10",
+    "sg_ron98_cheapest": 3.31,
+    "jb_ron97_myr": 4.58,
+    "jb_ron97_sgd": 1.424,
+    "fx": 0.3109,
+    "gap_sgd": 1.886
+  },
+  {
+    "date": "2026-03-11",
+    "sg_ron98_cheapest": 3.34,
+    "jb_ron97_myr": 4.61,
+    "jb_ron97_sgd": 1.434,
+    "fx": 0.3111,
+    "gap_sgd": 1.906
+  },
+  {
+    "date": "2026-03-12",
+    "sg_ron98_cheapest": 3.38,
+    "jb_ron97_myr": 4.65,
+    "jb_ron97_sgd": 1.448,
+    "fx": 0.3114,
+    "gap_sgd": 1.932
+  },
+  {
+    "date": "2026-03-13",
+    "sg_ron98_cheapest": 3.41,
+    "jb_ron97_myr": 4.68,
+    "jb_ron97_sgd": 1.459,
+    "fx": 0.3117,
+    "gap_sgd": 1.951
+  },
+  {
+    "date": "2026-03-14",
+    "sg_ron98_cheapest": 3.45,
+    "jb_ron97_myr": 4.72,
+    "jb_ron97_sgd": 1.473,
+    "fx": 0.312,
+    "gap_sgd": 1.977
+  },
+  {
+    "date": "2026-03-15",
+    "sg_ron98_cheapest": 3.49,
+    "jb_ron97_myr": 4.75,
+    "jb_ron97_sgd": 1.483,
+    "fx": 0.3123,
+    "gap_sgd": 2.007
+  },
+  {
+    "date": "2026-03-16",
+    "sg_ron98_cheapest": 3.52,
+    "jb_ron97_myr": 4.79,
+    "jb_ron97_sgd": 1.497,
+    "fx": 0.3126,
+    "gap_sgd": 2.023
+  },
+  {
+    "date": "2026-03-17",
+    "sg_ron98_cheapest": 3.56,
+    "jb_ron97_myr": 4.82,
+    "jb_ron97_sgd": 1.508,
+    "fx": 0.3129,
+    "gap_sgd": 2.052
+  },
+  {
+    "date": "2026-03-18",
+    "sg_ron98_cheapest": 3.59,
+    "jb_ron97_myr": 4.85,
+    "jb_ron97_sgd": 1.519,
+    "fx": 0.3131,
+    "gap_sgd": 2.071
+  },
+  {
+    "date": "2026-03-19",
+    "sg_ron98_cheapest": 3.63,
+    "jb_ron97_myr": 4.88,
+    "jb_ron97_sgd": 1.529,
+    "fx": 0.3134,
+    "gap_sgd": 2.101
+  },
+  {
+    "date": "2026-03-20",
+    "sg_ron98_cheapest": 3.66,
+    "jb_ron97_myr": 4.92,
+    "jb_ron97_sgd": 1.543,
+    "fx": 0.3137,
+    "gap_sgd": 2.117
+  },
+  {
+    "date": "2026-03-21",
+    "sg_ron98_cheapest": 3.7,
+    "jb_ron97_myr": 4.95,
+    "jb_ron97_sgd": 1.554,
+    "fx": 0.314,
+    "gap_sgd": 2.146
+  },
+  {
+    "date": "2026-03-22",
+    "sg_ron98_cheapest": 3.72,
+    "jb_ron97_myr": 4.98,
+    "jb_ron97_sgd": 1.564,
+    "fx": 0.3141,
+    "gap_sgd": 2.156
+  },
+  {
+    "date": "2026-03-23",
+    "sg_ron98_cheapest": 3.75,
+    "jb_ron97_myr": 5.01,
+    "jb_ron97_sgd": 1.575,
+    "fx": 0.3143,
+    "gap_sgd": 2.175
+  },
+  {
+    "date": "2026-03-24",
+    "sg_ron98_cheapest": 3.77,
+    "jb_ron97_myr": 5.04,
+    "jb_ron97_sgd": 1.585,
+    "fx": 0.3144,
+    "gap_sgd": 2.185
+  },
+  {
+    "date": "2026-03-25",
+    "sg_ron98_cheapest": 3.8,
+    "jb_ron97_myr": 5.06,
+    "jb_ron97_sgd": 1.592,
+    "fx": 0.3146,
+    "gap_sgd": 2.208
+  },
+  {
+    "date": "2026-03-26",
+    "sg_ron98_cheapest": 3.82,
+    "jb_ron97_myr": 5.09,
+    "jb_ron97_sgd": 1.602,
+    "fx": 0.3147,
+    "gap_sgd": 2.218
+  },
+  {
+    "date": "2026-03-27",
+    "sg_ron98_cheapest": 3.85,
+    "jb_ron97_myr": 5.12,
+    "jb_ron97_sgd": 1.612,
+    "fx": 0.3149,
+    "gap_sgd": 2.238
+  },
+  {
+    "date": "2026-03-28",
+    "sg_ron98_cheapest": 3.87,
+    "jb_ron97_myr": 5.15,
+    "jb_ron97_sgd": 1.622,
+    "fx": 0.315,
+    "gap_sgd": 2.248
+  },
+  {
+    "date": "2026-03-29",
+    "sg_ron98_cheapest": 3.88,
+    "jb_ron97_myr": 5.18,
+    "jb_ron97_sgd": 1.632,
+    "fx": 0.3151,
+    "gap_sgd": 2.248
+  },
+  {
+    "date": "2026-03-30",
+    "sg_ron98_cheapest": 3.89,
+    "jb_ron97_myr": 5.21,
+    "jb_ron97_sgd": 1.643,
+    "fx": 0.3153,
+    "gap_sgd": 2.247
+  },
+  {
+    "date": "2026-03-31",
+    "sg_ron98_cheapest": 3.9,
+    "jb_ron97_myr": 5.24,
+    "jb_ron97_sgd": 1.653,
+    "fx": 0.3154,
+    "gap_sgd": 2.247
+  },
+  {
+    "date": "2026-04-01",
+    "sg_ron98_cheapest": 3.9,
+    "jb_ron97_myr": 5.26,
+    "jb_ron97_sgd": 1.66,
+    "fx": 0.3156,
+    "gap_sgd": 2.24
+  },
+  {
+    "date": "2026-04-02",
+    "sg_ron98_cheapest": 3.91,
+    "jb_ron97_myr": 5.29,
+    "jb_ron97_sgd": 1.67,
+    "fx": 0.3157,
+    "gap_sgd": 2.24
+  },
+  {
+    "date": "2026-04-03",
+    "sg_ron98_cheapest": 3.92,
+    "jb_ron97_myr": 5.32,
+    "jb_ron97_sgd": 1.681,
+    "fx": 0.3159,
+    "gap_sgd": 2.239
+  },
+  {
+    "date": "2026-04-04",
+    "sg_ron98_cheapest": 3.93,
+    "jb_ron97_myr": 5.35,
+    "jb_ron97_sgd": 1.691,
+    "fx": 0.316,
+    "gap_sgd": 2.239
+  },
+  {
+    "date": "2026-04-05",
+    "sg_ron98_cheapest": 3.93,
+    "jb_ron97_myr": 5.35,
+    "jb_ron97_sgd": 1.691,
+    "fx": 0.316,
+    "gap_sgd": 2.239
+  },
+  {
+    "date": "2026-04-06",
+    "sg_ron98_cheapest": 3.93,
+    "jb_ron97_myr": 5.35,
+    "jb_ron97_sgd": 1.691,
+    "fx": 0.316,
+    "gap_sgd": 2.239
+  },
+  {
+    "date": "2026-04-07",
+    "sg_ron98_cheapest": 3.93,
+    "jb_ron97_myr": 5.35,
+    "jb_ron97_sgd": 1.691,
+    "fx": 0.316,
+    "gap_sgd": 2.239
+  },
+  {
+    "date": "2026-04-08",
+    "sg_ron98_cheapest": 3.93,
+    "jb_ron97_myr": 5.35,
+    "jb_ron97_sgd": 1.691,
+    "fx": 0.316,
+    "gap_sgd": 2.239
+  },
+  {
+    "date": "2026-04-09",
+    "sg_ron98_cheapest": 3.93,
+    "jb_ron97_myr": 5.35,
+    "jb_ron97_sgd": 1.691,
+    "fx": 0.316,
+    "gap_sgd": 2.239
+  },
+  {
+    "date": "2026-04-10",
+    "sg_ron98_cheapest": 3.93,
+    "jb_ron97_myr": 5.35,
+    "jb_ron97_sgd": 1.691,
+    "fx": 0.316,
+    "gap_sgd": 2.239
+  },
+  {
+    "date": "2026-04-11",
+    "sg_ron98_cheapest": 3.93,
+    "jb_ron97_myr": 5.35,
+    "jb_ron97_sgd": 1.691,
+    "fx": 0.316,
+    "gap_sgd": 2.239
+  }
+]

@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>SG vs JB Pump Prices</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #111010;
+  --bg2:      #1a1917;
+  --bg3:      #222120;
+  --orange:   #f5820a;
+  --orange2:  #e06c00;
+  --amber:    #fbb040;
+  --white:    #f0ece4;
+  --muted:    #6b6760;
+  --muted2:   #4a4845;
+  --green:    #2ec27e;
+  --red:      #e05252;
+  --border:   rgba(255,255,255,0.07);
+  --font:     'Space Grotesk', sans-serif;
+  --mono:     'DM Mono', monospace;
+  --radius:   10px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── LOADING ─────────────────────────────── */
+#loading {
+  position: fixed; inset: 0; z-index: 999;
+  background: var(--bg);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 20px;
+  transition: opacity 0.35s;
+}
+#loading.out { opacity: 0; pointer-events: none; }
+.ld-logo { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+.ld-logo span { color: var(--orange); }
+.ld-bar { width: 140px; height: 2px; background: var(--bg3); border-radius: 99px; overflow: hidden; }
+.ld-bar::after {
+  content: ''; display: block; height: 100%;
+  width: 40%; background: var(--orange);
+  border-radius: 99px;
+  animation: sweep 1s ease-in-out infinite alternate;
+}
+@keyframes sweep { from { margin-left: 0 } to { margin-left: 60% } }
+.ld-text { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--mono); }
+
+/* ── ERROR ───────────────────────────────── */
+#err { display: none; text-align: center; padding: 80px 24px; }
+#err h2 { font-size: 20px; color: var(--red); margin-bottom: 10px; }
+#err p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+/* ── APP ─────────────────────────────────── */
+#app { display: none; }
+
+/* ── TOPBAR ──────────────────────────────── */
+.topbar {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 20px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  position: sticky; top: 0; z-index: 50;
+}
+.logo { font-size: 18px; font-weight: 700; letter-spacing: -0.3px; line-height: 1; }
+.logo span { color: var(--orange); }
+.logo sub { font-size: 10px; font-weight: 400; color: var(--muted); display: block; letter-spacing: 0.05em; font-family: var(--mono); margin-top: 2px; }
+.topbar-meta { text-align: right; font-size: 11px; color: var(--muted); font-family: var(--mono); line-height: 1.6; flex-shrink: 0; }
+.src-badge {
+  display: inline-block; padding: 1px 6px; border-radius: 4px;
+  background: rgba(245,130,10,0.15); color: var(--orange);
+  font-size: 10px; margin-left: 4px;
+}
+.fb-badge {
+  background: rgba(251,176,64,0.15); color: var(--amber);
+}
+
+/* ── PAGE ────────────────────────────────── */
+.page { max-width: 680px; margin: 0 auto; padding: 20px 16px 80px; }
+
+/* ── FX STRIP ────────────────────────────── */
+.fx-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px; margin-bottom: 20px;
+}
+@media (min-width: 480px) { .fx-strip { grid-template-columns: repeat(4, 1fr); } }
+.fx-tile {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 14px;
+}
+.fx-label { font-size: 10px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; font-family: var(--mono); }
+.fx-val { font-size: 15px; font-weight: 600; color: var(--white); }
+.fx-sub { font-size: 10px; color: var(--muted); margin-top: 2px; font-family: var(--mono); }
+.fx-val.save { color: var(--green); }
+
+/* ── RULE BOX ────────────────────────────── */
+.rulebox {
+  background: rgba(245,130,10,0.06);
+  border: 1px solid rgba(245,130,10,0.2);
+  border-radius: var(--radius); padding: 12px 16px;
+  font-size: 12px; color: rgba(240,236,228,0.7);
+  line-height: 1.75; margin-bottom: 20px;
+}
+.rulebox b { color: var(--orange); font-weight: 600; }
+
+/* ── GRADE TABS ──────────────────────────── */
+.grade-scroll {
+  overflow-x: auto; margin-bottom: 6px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.grade-scroll::-webkit-scrollbar { display: none; }
+.grade-row { display: flex; gap: 6px; width: max-content; padding-bottom: 2px; }
+.gtab {
+  padding: 7px 16px; border-radius: 99px;
+  border: 1px solid var(--border);
+  background: transparent; color: var(--muted);
+  font-family: var(--font); font-size: 13px; font-weight: 500;
+  cursor: pointer; white-space: nowrap;
+  transition: all 0.15s; position: relative;
+}
+.gtab:hover { color: var(--white); border-color: rgba(255,255,255,0.2); }
+.gtab.active {
+  background: var(--orange); border-color: var(--orange);
+  color: #fff; font-weight: 600;
+}
+.jb-dot {
+  position: absolute; top: -2px; right: -2px;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--green); border: 1.5px solid var(--bg);
+}
+.grade-hint { font-size: 11px; color: var(--muted); margin-bottom: 20px; font-family: var(--mono); }
+.eq-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 4px;
+  background: rgba(46,194,126,0.12); color: var(--green);
+  font-size: 11px; font-weight: 500; margin-left: 4px;
+}
+.na-tag {
+  background: rgba(255,255,255,0.06); color: var(--muted);
+}
+
+/* ── SUMMARY CARDS ───────────────────────── */
+.cards {
+  display: grid; gap: 8px; margin-bottom: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 480px) { .cards { grid-template-columns: repeat(4, 1fr); } }
+.card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px 16px;
+}
+.card-label { font-size: 10px; color: var(--muted); letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 6px; font-family: var(--mono); }
+.card-val { font-size: 22px; font-weight: 700; line-height: 1; margin-bottom: 3px; }
+.card-sub { font-size: 11px; color: var(--muted); }
+.card-val.green { color: var(--green); }
+.card-val.red { color: var(--red); }
+.card-val.orange { color: var(--orange); }
+.card-wide { grid-column: 1 / -1; }
+
+/* ── SEGMENT TABS ────────────────────────── */
+.seg-tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+.seg-tab {
+  padding: 10px 18px; background: none; border: none;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+  font-family: var(--font); font-size: 13px; font-weight: 500;
+  color: var(--muted); cursor: pointer; transition: all 0.15s;
+}
+.seg-tab:hover { color: var(--white); }
+.seg-tab.active { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* ── TABLE ───────────────────────────────── */
+.tbl-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 320px; }
+th {
+  padding: 9px 14px; text-align: left;
+  font-size: 10px; color: var(--muted);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2); font-weight: 500; font-family: var(--mono);
+}
+td {
+  padding: 11px 14px; border-bottom: 1px solid var(--border);
+  font-family: var(--mono); font-size: 13px;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+.td-brand { font-family: var(--font); font-weight: 500; font-size: 13px; }
+.td-price { font-weight: 600; font-size: 14px; }
+.td-loc { font-size: 12px; color: var(--muted); font-family: var(--font); }
+.pill {
+  display: inline-block; padding: 2px 8px; border-radius: 4px;
+  font-size: 11px; font-weight: 600; font-family: var(--mono);
+}
+.pill-save { background: rgba(46,194,126,0.12); color: var(--green); }
+.pill-exp  { background: rgba(224,82,82,0.12);  color: var(--red); }
+.pill-same { background: rgba(255,255,255,0.06); color: var(--muted); }
+.jb-chip {
+  display: inline-block; padding: 1px 6px; border-radius: 3px;
+  font-size: 10px; font-weight: 500;
+  background: rgba(245,130,10,0.15); color: var(--orange);
+  margin-left: 5px; vertical-align: middle; font-family: var(--font);
+}
+.note { font-size: 11px; color: var(--muted); line-height: 1.75; padding: 8px 0; font-family: var(--mono); }
+
+/* ── STATIONS ────────────────────────────── */
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+select {
+  padding: 8px 12px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--bg2);
+  color: var(--white); font-family: var(--font); font-size: 13px;
+  cursor: pointer; -webkit-appearance: none; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236b6760'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 10px center;
+  padding-right: 28px;
+}
+select:focus { outline: 1px solid var(--orange); border-color: var(--orange); }
+.st-list { display: flex; flex-direction: column; gap: 8px; }
+.scard {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px 16px;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  transition: border-color 0.15s;
+}
+.scard:hover { border-color: rgba(255,255,255,0.15); }
+.scard.best { border-color: rgba(46,194,126,0.35); }
+.s-name { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+.s-addr { font-size: 11px; color: var(--muted); font-family: var(--mono); }
+.s-price { font-size: 22px; font-weight: 700; text-align: right; white-space: nowrap; line-height: 1; }
+.s-rm { font-size: 11px; color: var(--muted); text-align: right; font-family: var(--mono); margin-top: 2px; }
+.best-tag {
+  display: inline-block; padding: 1px 7px; border-radius: 4px;
+  font-size: 10px; font-weight: 600;
+  background: rgba(46,194,126,0.15); color: var(--green);
+  margin-left: 6px; vertical-align: middle;
+}
+.no-data { padding: 32px; text-align: center; color: var(--muted); font-size: 13px; line-height: 1.7; }
+
+/* ── FOOTER ──────────────────────────────── */
+.footer {
+  margin-top: 48px; padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 11px; color: var(--muted); font-family: var(--mono);
+  display: flex; flex-direction: column; gap: 4px;
+}
+@media (min-width: 560px) {
+  .footer { flex-direction: row; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+}
+
+/* ── HIST CARDS ──────────────────────────── */
+.hcard { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:12px 14px; }
+.hcard-label { font-size:10px; color:var(--muted); letter-spacing:0.07em; text-transform:uppercase; margin-bottom:4px; font-family:var(--mono); }
+.hcard-val { font-size:18px; font-weight:700; }
+
+/* ── UTILS ───────────────────────────────── */
+.flag { margin-right: 5px; }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+</head>
+<body>
+
+<!-- Loading -->
+<div id="loading">
+  <div class="ld-logo">at<span>sell</span> · fuel <span style="color:var(--amber)">⛽</span></div>
+  <div class="ld-bar"></div>
+  <div class="ld-text">Fetching live prices</div>
+</div>
+
+<!-- Error -->
+<div id="err">
+  <h2>Prices unavailable</h2>
+  <p>prices.json is missing or invalid.<br>Check that GitHub Actions has run at least once.</p>
+</div>
+
+<!-- App -->
+<div id="app">
+  <!-- Sticky topbar -->
+  <div class="topbar">
+    <div class="logo">
+      at<span>sell</span> <span style="color:var(--muted);font-weight:400">·</span> fuel
+      <sub id="topbar-sub">SG vs JB pump prices</sub>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <button id="share-btn" onclick="shareCard()" style="padding:6px 14px;border-radius:99px;border:1px solid rgba(245,130,10,0.4);background:rgba(245,130,10,0.1);color:var(--orange);font-family:var(--font);font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap">⬆ Share</button>
+      <div class="topbar-meta" id="topbar-meta"></div>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <!-- FX strip -->
+    <div class="fx-strip" id="fx-strip"></div>
+
+    <!-- Rules -->
+    <div class="rulebox">
+      <b>JB rules for SG cars</b> &nbsp;·&nbsp;
+      RON95 banned for foreign vehicles from 1 Apr 2026.
+      Only <b>RON97 (= SG RON98)</b> or above may be pumped.
+      Cards accepted for RON97 at Petronas, Shell, Caltex & Petron.
+      SG law: <b>≥ 3/4 tank before exiting</b> via land checkpoint.
+    </div>
+
+    <!-- Grade tabs -->
+    <div class="grade-scroll">
+      <div class="grade-row" id="grade-row"></div>
+    </div>
+    <div class="grade-hint" id="grade-hint"></div>
+
+    <!-- Summary cards -->
+    <div class="cards" id="cards"></div>
+
+    <!-- Segment tabs -->
+    <div class="seg-tabs" id="seg-tabs">
+      <button class="seg-tab active" data-tab="table">Price table</button>
+      <button class="seg-tab" data-tab="stations">Stations</button>
+      <button class="seg-tab" data-tab="history">Price history</button>
+    </div>
+
+    <!-- Table tab -->
+    <div id="tab-table">
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr>
+            <th style="width:40%">Brand</th>
+            <th style="width:22%">Where</th>
+            <th style="width:19%">SGD / L</th>
+            <th style="width:19%">vs SG</th>
+          </tr></thead>
+          <tbody id="tbl-body"></tbody>
+        </table>
+      </div>
+      <p class="note" id="tbl-note"></p>
+    </div>
+
+    <!-- Stations tab -->
+    <div id="tab-stations" style="display:none">
+      <div class="filters">
+        <select id="cf">
+          <option value="all">All stations</option>
+          <option value="sg">Singapore only</option>
+          <option value="jb">JB only</option>
+        </select>
+        <select id="sf">
+          <option value="price">Cheapest first</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+      <div class="st-list" id="st-list"></div>
+      <p class="note" style="margin-top:12px">
+        JB distances from Woodlands Checkpoint.
+        You enter JB with ≥3/4 tank — realistically you top up ~10–15L only.
+        Net saving per JB trip at current rates: factor in ~SGD 3–8 for ERP + toll.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span>SG: <span id="ft-sg"></span></span>
+      <span>MY: api.data.gov.my (weekly)</span>
+      <span>FX: frankfurter.app (daily)</span>
+      <span>Auto-updates via GitHub Actions</span>
+    </div>
+
+      <!-- History tab -->
+    <div id="tab-history" style="display:none">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;align-items:center">
+        <div style="font-size:12px;color:var(--muted);font-family:var(--mono)">SG RON98 (cheapest) vs JB RON97 — price gap over time</div>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:12px">
+        <div style="position:relative;width:100%;height:220px">
+          <canvas id="histChart" role="img" aria-label="Line chart showing SG vs JB petrol price gap over 3 months"></canvas>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px" id="hist-cards"></div>
+      <p class="note">Chart shows daily price gap (SG RON98 minus JB RON97 in SGD/L). Seeded from Jan 2026 using known public price points. Builds from real scraper data going forward.</p>
+    </div>
+
+    <!-- Hidden share canvas -->
+    <canvas id="shareCanvas" style="display:none" width="800" height="400"></canvas>
+
+</div><!-- /page -->
+</div><!-- /app -->
+
+<script>
+// ── GRADE CONFIG ──────────────────────────────────────────────
+const GRADES = [
+  { key:'ron92',   label:'RON 92',  jb:false, sgOnly:'No JB equivalent — below minimum grade at modern JB stations.' },
+  { key:'ron95',   label:'RON 95',  jb:false, sgOnly:'Banned for SG-registered cars in JB from 1 Apr 2026.' },
+  { key:'ron98',   label:'RON 98',  jb:true,  jbLabel:'RON 97',
+    eq:'SG RON98 ≡ JB RON97 — same octane, different label',
+    note:'JB RON97 is the only grade SG cars can legally pump. Accepted at Petronas, Shell, Caltex, Petron.',
+    jbBrands:['Petronas','Shell','Caltex','Petron'] },
+  { key:'premium', label:'Premium', jb:false, sgOnly:'Not widely available in JB for foreign cars.' },
+  { key:'diesel',  label:'Diesel',  jb:true,  jbLabel:'Diesel',
+    eq:'Same product — Peninsular Malaysia unsubsidised rate',
+    note:'JB diesel is cheaper per litre but saving is smaller than RON98.',
+    jbBrands:['Petronas','Shell','Caltex','BHPetrol'] },
+];
+
+const JB_STATIONS = [
+  { name:'Petronas Jln Skudai',   addr:'Jln Skudai, JB',         dist:'~3km from CW', maps:'https://maps.google.com/?q=Petronas+Jalan+Skudai+Johor+Bahru' },
+  { name:'Shell Larkin',          addr:'Jln Garuda, Larkin, JB', dist:'~5km from CW', maps:'https://maps.google.com/?q=Shell+Larkin+Johor+Bahru' },
+  { name:'Caltex Medini',         addr:'Near Medini Educity, JB',dist:'~8km from CW', maps:'https://maps.google.com/?q=Caltex+Medini+Johor+Bahru' },
+  { name:'Petron Jln Yahya Awal', addr:'Jln Yahya Awal, JB',     dist:'~9km from CW', maps:'https://maps.google.com/?q=Petron+Jalan+Yahya+Awal+Johor+Bahru' },
+];
+const SG_STATIONS = [
+  { name:'Shell Woodlands Ave 2',   addr:'Woodlands Ave 2',           dist:'~3km', maps:'https://maps.google.com/?q=Shell+Woodlands+Avenue+2+Singapore',        brands:{ ron92:null,    ron95:'Shell',   ron98:'Shell',   premium:'Shell',   diesel:'Shell'   }},
+  { name:'SPC Woodlands Ring Rd',   addr:'Woodlands Ring Rd',         dist:'~4km', maps:'https://maps.google.com/?q=SPC+Woodlands+Ring+Road+Singapore',          brands:{ ron92:'SPC',   ron95:'SPC',     ron98:'SPC',     premium:null,      diesel:'SPC'     }},
+  { name:'Esso Woodlands Ind Park', addr:'Woodlands Industrial Park', dist:'~5km', maps:'https://maps.google.com/?q=Esso+Woodlands+Industrial+Park+Singapore',   brands:{ ron92:'Esso',  ron95:'Esso',    ron98:'Esso',    premium:null,      diesel:'Esso'    }},
+  { name:'Caltex Admiralty Rd W',   addr:'Admiralty Rd W',            dist:'~6km', maps:'https://maps.google.com/?q=Caltex+Admiralty+Road+West+Singapore',       brands:{ ron92:'Caltex',ron95:'Caltex', ron98:null,      premium:'Caltex',  diesel:'Caltex'  }},
+  { name:'Sinopec Kranji',          addr:'Kranji Rd',                 dist:'~7km', maps:'https://maps.google.com/?q=Sinopec+Kranji+Road+Singapore',              brands:{ ron92:null,    ron95:'Sinopec', ron98:'Sinopec', premium:'Sinopec', diesel:'Sinopec' }},
+];
+
+// ── STATE ─────────────────────────────────────────────────────
+let DATA = null;
+let grade = 'ron98';
+let activeTab = 'table';
+
+// ── DATA HELPERS ──────────────────────────────────────────────
+const sgPrices  = g => DATA?.singapore?.prices?.[g] || [];
+const sgMin     = g => { const p=sgPrices(g); return p.length ? Math.min(...p.map(r=>r.price)) : null; };
+const g         = ()=> GRADES.find(x=>x.key===grade);
+const fx        = ()=> DATA?.fx?.rate || 0.316;
+const fmt       = n => n!=null ? n.toFixed(2) : '—';
+const pctDiff   = (a,b) => b ? ((a-b)/b*100) : null;
+
+function jbPrice(k) {
+  const gd = GRADES.find(x=>x.key===k);
+  if (!gd?.jb) return null;
+  const my = DATA?.malaysia;
+  if (!my) return null;
+  if (k==='ron98')  return +(my.ron97  * fx()).toFixed(3);
+  if (k==='diesel') return +(my.diesel * fx()).toFixed(3);
+  return null;
+}
+function jbMYR(k) {
+  const my = DATA?.malaysia;
+  if (!my) return null;
+  if (k==='ron98')  return my.ron97;
+  if (k==='diesel') return my.diesel;
+  return null;
+}
+
+// ── LOAD ──────────────────────────────────────────────────────
+async function loadData() {
+  try {
+    const r = await fetch('./prices.json?v='+Date.now());
+    if (!r.ok) throw new Error('HTTP '+r.status);
+    DATA = await r.json();
+    return true;
+  } catch(e) { console.error(e); return false; }
+}
+
+// ── TOPBAR & FX ───────────────────────────────────────────────
+function renderTopbar() {
+  const sg = DATA?.singapore;
+  const fb = sg?.fallback_used;
+  document.getElementById('topbar-meta').innerHTML =
+    `${sg?.date||'—'} · ${sg?.source||'—'}${fb?'<span class="src-badge fb-badge">FALLBACK</span>':'<span class="src-badge">LIVE</span>'}`;
+  document.getElementById('ft-sg').textContent = sg?.source||'—';
+}
+
+function renderFX() {
+  const fx_rate = DATA?.fx?.rate || 0.316;
+  const my = DATA?.malaysia || {};
+  const jbP = jbPrice('ron98');
+  const sgM = sgMin('ron98');
+  const save50 = jbP && sgM ? ((sgM-jbP)*50).toFixed(2) : '—';
+  document.getElementById('fx-strip').innerHTML = `
+    <div class="fx-tile">
+      <div class="fx-label">FX rate</div>
+      <div class="fx-val">1 MYR = SGD ${fx_rate}</div>
+      <div class="fx-sub">${DATA?.fx?.date||'—'}</div>
+    </div>
+    <div class="fx-tile">
+      <div class="fx-label">JB RON97 (RM)</div>
+      <div class="fx-val">RM ${my.ron97||'—'}/L</div>
+      <div class="fx-sub">Updated ${my.date||'—'}</div>
+    </div>
+    <div class="fx-tile">
+      <div class="fx-label">JB RON97 in SGD</div>
+      <div class="fx-val">${jbP ? 'SGD '+fmt(jbP) : '—'}</div>
+      <div class="fx-sub">vs SG RON98</div>
+    </div>
+    <div class="fx-tile">
+      <div class="fx-label">50L tank saving</div>
+      <div class="fx-val save">SGD ${save50}</div>
+      <div class="fx-sub">before toll & ERP</div>
+    </div>`;
+}
+
+// ── GRADE TABS ────────────────────────────────────────────────
+function renderGradeTabs() {
+  document.getElementById('grade-row').innerHTML = GRADES.map(gd=>`
+    <button class="gtab${gd.key===grade?' active':''}" data-grade="${gd.key}">
+      ${gd.label}${gd.jb?'<span class="jb-dot"></span>':''}
+    </button>`).join('');
+
+  const gd = g();
+  document.getElementById('grade-hint').innerHTML = gd.jb
+    ? `<span style="color:var(--green)">●</span> = JB available &nbsp;·&nbsp; <span class="eq-tag">${gd.eq}</span>`
+    : `<span class="eq-tag na-tag">${gd.sgOnly}</span>`;
+}
+
+// ── SUMMARY CARDS ─────────────────────────────────────────────
+function renderCards() {
+  const gd = g();
+  const sgM  = sgMin(grade);
+  const cheap = sgPrices(grade)[0];
+  const jbP  = jbPrice(grade);
+  const myR  = jbMYR(grade);
+  const diff = jbP!=null && sgM!=null ? jbP-sgM : null;
+  const save = diff!=null ? Math.abs(diff*50).toFixed(2) : null;
+  const isSave = diff!=null && diff<0;
+
+  let html = `
+    <div class="card">
+      <div class="card-label">🇸🇬 Cheapest SG · ${gd.label}</div>
+      <div class="card-val orange">SGD ${sgM!=null?fmt(sgM):'—'}</div>
+      <div class="card-sub">${cheap?.brand||'—'}</div>
+    </div>`;
+
+  if (gd.jb && jbP!=null) {
+    html += `
+    <div class="card">
+      <div class="card-label">🇲🇾 JB ${gd.jbLabel}</div>
+      <div class="card-val orange">SGD ${fmt(jbP)}</div>
+      <div class="card-sub">RM ${myR}/L</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Difference / litre</div>
+      <div class="card-val ${isSave?'green':'red'}">${diff>=0?'+':''}${fmt(diff)}</div>
+      <div class="card-sub">${isSave?'JB '+Math.abs(pctDiff(jbP,sgM)).toFixed(1)+'% cheaper':'JB '+pctDiff(jbP,sgM).toFixed(1)+'% more exp.'}</div>
+    </div>
+    <div class="card">
+      <div class="card-label">50L tank saving</div>
+      <div class="card-val ${isSave?'green':'red'}">${isSave?'SGD '+save:'—'}</div>
+      <div class="card-sub">${isSave?'before ERP + toll':'no advantage'}</div>
+    </div>`;
+  } else {
+    html += `<div class="card card-wide">
+      <div class="card-label">🇲🇾 JB</div>
+      <div class="card-val" style="font-size:13px;color:var(--muted)">${gd.sgOnly}</div>
+    </div>`;
+  }
+  document.getElementById('cards').innerHTML = html;
+}
+
+// ── TABLE ─────────────────────────────────────────────────────
+function renderTable() {
+  const gd  = g();
+  const sgM = sgMin(grade);
+  const jbP = jbPrice(grade);
+  const myR = jbMYR(grade);
+
+  let rows = sgPrices(grade).map(r=>({...r, loc:'Singapore', isjb:false}));
+  if (gd.jb && jbP!=null)
+    gd.jbBrands.forEach(b=>rows.push({brand:b, price:jbP, loc:'Johor Bahru', isjb:true, myR}));
+  rows.sort((a,b)=>a.price-b.price);
+
+  document.getElementById('tbl-body').innerHTML = rows.map(r=>{
+    const d = sgM!=null ? (r.price-sgM)/sgM*100 : null;
+    const pc = d!=null ? (d>=0?'+':'')+d.toFixed(1)+'%' : '—';
+    const pillCls = d==null?'pill pill-same':d<=-0.05?'pill pill-save':d<5?'pill pill-same':'pill pill-exp';
+    const myNote = r.isjb ? ` <span style="font-size:11px;color:var(--muted);font-family:var(--mono)">(RM ${r.myR})</span>` : '';
+    return `<tr>
+      <td class="td-brand"><span class="flag">${r.isjb?'🇲🇾':'🇸🇬'}</span>${r.brand}${myNote}${r.isjb?'<span class="jb-chip">JB</span>':''}</td>
+      <td class="td-loc">${r.loc}</td>
+      <td class="td-price">${fmt(r.price)}</td>
+      <td><span class="${pillCls}">${pc}</span></td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="4" class="no-data">No data for this grade</td></tr>';
+
+  document.getElementById('tbl-note').textContent = gd.jb
+    ? gd.note+` FX: 1 MYR = SGD ${fx().toFixed(4)}.`
+    : gd.sgOnly;
+}
+
+// ── STATIONS ──────────────────────────────────────────────────
+function renderStations() {
+  const gd  = g();
+  const cf  = document.getElementById('cf').value;
+  const sf  = document.getElementById('sf').value;
+  const jbP = jbPrice(grade);
+  const myR = jbMYR(grade);
+  let list  = [];
+
+  if (cf==='all'||cf==='sg') {
+    SG_STATIONS.forEach(s=>{
+      const bn = s.brands[grade];
+      if (!bn) return;
+      const match = sgPrices(grade).find(r=>r.brand===bn);
+      if (match) list.push({...s, price:match.price, country:'sg'});
+    });
+  }
+  if ((cf==='all'||cf==='jb') && gd.jb && jbP!=null) {
+    JB_STATIONS.forEach(s=>list.push({...s, price:jbP, myR, country:'jb'}));
+  }
+
+  if (sf==='price') list.sort((a,b)=>a.price-b.price);
+  else list.sort((a,b)=>a.name.localeCompare(b.name));
+
+  if (!list.length) {
+    document.getElementById('st-list').innerHTML =
+      `<div class="no-data">${!gd.jb&&cf!=='sg'?gd.sgOnly:'No stations for this filter.'}</div>`;
+    return;
+  }
+
+  const minP = Math.min(...list.map(s=>s.price));
+  document.getElementById('st-list').innerHTML = list.map(s=>`
+    <a class="scard${s.price===minP?' best':''}" href="${s.maps}" target="_blank" rel="noopener" style="text-decoration:none;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+      <div>
+        <div class="s-name">${s.country==='jb'?'🇲🇾':'🇸🇬'} ${s.name}${s.price===minP?'<span class="best-tag">Cheapest</span>':''} <span style="font-size:10px;color:var(--muted);font-family:var(--mono)">↗ maps</span></div>
+        <div class="s-addr">${s.addr} · ${s.dist}</div>
+      </div>
+      <div>
+        <div class="s-price" style="color:var(--orange)">SGD ${fmt(s.price)}</div>
+        ${s.myR?`<div class="s-rm">RM ${s.myR}/L</div>`:''}
+      </div>
+    </a>`).join('');
+}
+
+// ── TABS ──────────────────────────────────────────────────────
+function setTab(t) {
+  activeTab = t;
+  document.getElementById('tab-table').style.display    = t==='table'    ? '' : 'none';
+  document.getElementById('tab-stations').style.display = t==='stations' ? '' : 'none';
+  document.querySelectorAll('.seg-tab').forEach(b=>b.classList.toggle('active', b.dataset.tab===t));
+}
+
+// ── GRADE SWITCH ──────────────────────────────────────────────
+function setGrade(k) {
+  grade = k;
+  renderGradeTabs();
+  renderCards();
+  renderTable();
+  renderStations();
+}
+
+// ── EVENTS ────────────────────────────────────────────────────
+document.getElementById('seg-tabs').onclick = e=>{
+  const b = e.target.closest('[data-tab]'); if(b) setTab(b.dataset.tab);
+};
+document.addEventListener('click', e=>{
+  const b = e.target.closest('[data-grade]'); if(b) setGrade(b.dataset.grade);
+});
+document.getElementById('cf').onchange = renderStations;
+document.getElementById('sf').onchange = renderStations;
+
+// ── INIT ──────────────────────────────────────────────────────
+async function init() {
+  const ok = await loadData();
+  await loadHistory();
+  document.getElementById('loading').classList.add('out');
+  setTimeout(()=>document.getElementById('loading').style.display='none', 400);
+
+  if (!ok || !DATA?.singapore) {
+    document.getElementById('err').style.display = 'block';
+    return;
+  }
+
+  document.getElementById('app').style.display = 'block';
+  renderTopbar();
+  renderFX();
+  renderGradeTabs();
+  renderCards();
+  renderTable();
+  renderStations();
+}
+
+init();
+
+
+// ── HISTORY DATA & CHART ─────────────────────────────────────
+let HISTORY = [];
+let histChart = null;
+
+async function loadHistory() {
+  try {
+    const r = await fetch('./history.json?v=' + Date.now());
+    if (!r.ok) return;
+    HISTORY = await r.json();
+  } catch(e) { console.error('history load failed', e); }
+}
+
+function renderHistory() {
+  if (!HISTORY.length) {
+    document.getElementById('hist-cards').innerHTML =
+      '<div style="grid-column:span 3;color:var(--muted);font-size:13px">No history data yet — builds up from daily scraper runs.</div>';
+    return;
+  }
+
+  // Last 90 days
+  const slice = HISTORY.slice(-90);
+  const latest = slice[slice.length - 1];
+  const oldest = slice[0];
+  const maxGap = Math.max(...slice.map(d => d.gap_sgd));
+  const minGap = Math.min(...slice.map(d => d.gap_sgd));
+  const avgGap = (slice.reduce((a,b) => a + b.gap_sgd, 0) / slice.length).toFixed(2);
+  const gapTrend = latest.gap_sgd > oldest.gap_sgd ? '↑ Widening' : '↓ Narrowing';
+  const trendColor = latest.gap_sgd > oldest.gap_sgd ? 'var(--green)' : 'var(--amber)';
+
+  document.getElementById('hist-cards').innerHTML = `
+    <div class="hcard">
+      <div class="hcard-label">Current gap</div>
+      <div class="hcard-val" style="color:var(--green)">SGD ${latest.gap_sgd.toFixed(2)}/L</div>
+    </div>
+    <div class="hcard">
+      <div class="hcard-label">90-day avg gap</div>
+      <div class="hcard-val" style="color:var(--orange)">SGD ${avgGap}/L</div>
+    </div>
+    <div class="hcard">
+      <div class="hcard-label">Trend</div>
+      <div class="hcard-val" style="color:${trendColor};font-size:15px">${gapTrend}</div>
+    </div>`;
+
+  const labels = slice.map(d => d.date.slice(5)); // MM-DD
+  const sgData = slice.map(d => d.sg_ron98_cheapest);
+  const jbData = slice.map(d => d.jb_ron97_sgd);
+  const gapData = slice.map(d => d.gap_sgd);
+
+  if (histChart) histChart.destroy();
+  histChart = new Chart(document.getElementById('histChart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'SG RON98',
+          data: sgData,
+          borderColor: '#f5820a',
+          backgroundColor: 'rgba(245,130,10,0.08)',
+          borderWidth: 2, pointRadius: 0, tension: 0.3, fill: false
+        },
+        {
+          label: 'JB RON97 (SGD)',
+          data: jbData,
+          borderColor: '#2ec27e',
+          backgroundColor: 'rgba(46,194,126,0.08)',
+          borderWidth: 2, pointRadius: 0, tension: 0.3, fill: false
+        },
+        {
+          label: 'Gap (SG−JB)',
+          data: gapData,
+          borderColor: '#fbb040',
+          borderWidth: 1.5, borderDash: [4,3],
+          pointRadius: 0, tension: 0.3, fill: false,
+          yAxisID: 'y2'
+        }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          display: true,
+          labels: { color: '#6b6760', font: { size: 11 }, boxWidth: 12, padding: 16 }
+        },
+        tooltip: {
+          backgroundColor: '#1a1917',
+          borderColor: 'rgba(255,255,255,0.1)',
+          borderWidth: 1,
+          titleColor: '#f0ece4',
+          bodyColor: '#6b6760',
+          callbacks: { label: ctx => ctx.dataset.label + ': SGD ' + ctx.raw.toFixed(2) }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(255,255,255,0.04)' },
+          ticks: { color: '#6b6760', font: { size: 10 }, maxTicksLimit: 8 }
+        },
+        y: {
+          grid: { color: 'rgba(255,255,255,0.04)' },
+          ticks: { color: '#6b6760', font: { size: 10 }, callback: v => '$'+v.toFixed(2) }
+        },
+        y2: {
+          position: 'right',
+          grid: { display: false },
+          ticks: { color: '#fbb040', font: { size: 10 }, callback: v => 'Δ$'+v.toFixed(2) }
+        }
+      }
+    }
+  });
+}
+
+// ── SHARE CARD ───────────────────────────────────────────────
+function shareCard() {
+  const canvas = document.getElementById('shareCanvas');
+  const ctx = canvas.getContext('2d');
+  const W = 800, H = 400;
+  canvas.width = W; canvas.height = H;
+
+  // Background
+  ctx.fillStyle = '#111010';
+  ctx.fillRect(0, 0, W, H);
+
+  // Orange accent bar top
+  ctx.fillStyle = '#f5820a';
+  ctx.fillRect(0, 0, W, 4);
+
+  // Header
+  ctx.fillStyle = '#f0ece4';
+  ctx.font = 'bold 28px sans-serif';
+  ctx.fillText('⛽ SG vs JB Pump Prices', 48, 60);
+
+  ctx.fillStyle = '#6b6760';
+  ctx.font = '14px monospace';
+  const today = new Date().toLocaleDateString('en-SG', { day:'numeric', month:'short', year:'numeric' });
+  ctx.fillText(today + '  ·  petrol-tracker-phi.vercel.app', 48, 88);
+
+  // Divider
+  ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(48, 108); ctx.lineTo(W-48, 108); ctx.stroke();
+
+  // Get live data
+  const fx = DATA?.fx?.rate || 0.316;
+  const sgMin98 = sgMin('ron98');
+  const jbP = jbPrice('ron98');
+  const myR = DATA?.malaysia?.ron97;
+  const gap = sgMin98 && jbP ? (sgMin98 - jbP).toFixed(2) : '—';
+  const save50 = sgMin98 && jbP ? ((sgMin98 - jbP) * 50).toFixed(2) : '—';
+  const sgCheap = sgPrices('ron98')[0]?.brand || '—';
+
+  // Price boxes
+  const boxes = [
+    { label: '🇸🇬 SG RON98 (cheapest)', val: 'SGD ' + (sgMin98 ? sgMin98.toFixed(2) : '—') + '/L', sub: sgCheap, color: '#f5820a' },
+    { label: '🇲🇾 JB RON97', val: 'SGD ' + (jbP ? jbP.toFixed(2) : '—') + '/L', sub: 'RM ' + (myR || '—') + '/L', color: '#2ec27e' },
+    { label: '💰 50L tank saving', val: 'SGD ' + save50, sub: 'before toll & ERP', color: '#fbb040' },
+  ];
+
+  boxes.forEach((b, i) => {
+    const x = 48 + i * 238;
+    const y = 128;
+    // Box bg
+    ctx.fillStyle = 'rgba(255,255,255,0.04)';
+    roundRect(ctx, x, y, 218, 160, 8);
+    ctx.fill();
+    // Label
+    ctx.fillStyle = '#6b6760';
+    ctx.font = '12px monospace';
+    ctx.fillText(b.label, x + 16, y + 28);
+    // Value
+    ctx.fillStyle = b.color;
+    ctx.font = 'bold 26px sans-serif';
+    ctx.fillText(b.val, x + 16, y + 72);
+    // Sub
+    ctx.fillStyle = '#6b6760';
+    ctx.font = '12px monospace';
+    ctx.fillText(b.sub, x + 16, y + 96);
+  });
+
+  // FX rate
+  ctx.fillStyle = '#4a4845';
+  ctx.font = '12px monospace';
+  ctx.fillText('1 MYR = SGD ' + fx + '  ·  RON95 banned for SG cars in JB from 1 Apr 2026  ·  Only RON97 legal', 48, 330);
+
+  // Footer
+  ctx.fillStyle = '#f5820a';
+  ctx.font = 'bold 13px sans-serif';
+  ctx.fillText('petrol-tracker-phi.vercel.app', 48, 370);
+  ctx.fillStyle = '#4a4845';
+  ctx.font = '12px monospace';
+  ctx.fillText('Auto-updates daily. Free tool.', 340, 370);
+
+  // Share
+  canvas.toBlob(blob => {
+    const url = URL.createObjectURL(blob);
+    const text = `⛽ SG vs JB Petrol Prices (${today})%0ASG RON98: SGD ${sgMin98?.toFixed(2)}/L%0AJB RON97: SGD ${jbP?.toFixed(2)}/L (RM ${myR})%0A50L saving: SGD ${save50}%0A%0Apetrol-tracker-phi.vercel.app`;
+
+    // Try Web Share API (mobile)
+    if (navigator.share && navigator.canShare) {
+      const file = new File([blob], 'petrol-prices.png', { type: 'image/png' });
+      if (navigator.canShare({ files: [file] })) {
+        navigator.share({ files: [file], title: 'SG vs JB Petrol Prices', text: 'Live pump price comparison' })
+          .catch(() => fallbackShare(text));
+        return;
+      }
+    }
+    fallbackShare(text);
+  }, 'image/png');
+}
+
+function fallbackShare(text) {
+  // WhatsApp fallback
+  window.open('https://wa.me/?text=' + text, '_blank');
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x+r, y);
+  ctx.lineTo(x+w-r, y); ctx.arcTo(x+w, y, x+w, y+r, r);
+  ctx.lineTo(x+w, y+h-r); ctx.arcTo(x+w, y+h, x+w-r, y+h, r);
+  ctx.lineTo(x+r, y+h); ctx.arcTo(x, y+h, x, y+h-r, r);
+  ctx.lineTo(x, y+r); ctx.arcTo(x, y, x+r, y, r);
+  ctx.closePath();
+}
+
+// ── PATCH setTab to handle history ───────────────────────────
+const _origSetTab = setTab;
+function setTab(t) {
+  ['compare','stations','history'].forEach(id => {
+    const el = document.getElementById('tab-' + id);
+    if (el) el.style.display = id === t ? '' : 'none';
+  });
+  document.querySelectorAll('.seg-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === t));
+  if (t === 'history') renderHistory();
+}
+
+
+</script>
+</body>
+</html>

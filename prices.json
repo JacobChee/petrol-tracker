@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-23T06:28:26.657065+00:00",
+  "generated_at": "2026-04-23T07:14:35.769740+00:00",
   "fx": {
     "rate": 0.32226,
     "date": "2026-04-22",
@@ -16,42 +16,6 @@
   "singapore": {
     "date": "2026-04-23",
     "prices": {
-      "ron92": [
-        {
-          "brand": "SPC",
-          "price": 3.39
-        },
-        {
-          "brand": "Esso",
-          "price": 3.43
-        },
-        {
-          "brand": "Caltex",
-          "price": 3.43
-        }
-      ],
-      "ron95": [
-        {
-          "brand": "SPC",
-          "price": 3.42
-        },
-        {
-          "brand": "Esso",
-          "price": 3.46
-        },
-        {
-          "brand": "Shell",
-          "price": 3.46
-        },
-        {
-          "brand": "Sinopec",
-          "price": 3.46
-        },
-        {
-          "brand": "Caltex",
-          "price": 3.47
-        }
-      ],
       "diesel": [
         {
           "brand": "SPC",
@@ -104,6 +68,42 @@
         {
           "brand": "Shell",
           "price": 4.2
+        }
+      ],
+      "ron92": [
+        {
+          "brand": "SPC",
+          "price": 3.39
+        },
+        {
+          "brand": "Esso",
+          "price": 3.43
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.43
+        }
+      ],
+      "ron95": [
+        {
+          "brand": "SPC",
+          "price": 3.42
+        },
+        {
+          "brand": "Esso",
+          "price": 3.46
+        },
+        {
+          "brand": "Shell",
+          "price": 3.46
+        },
+        {
+          "brand": "Sinopec",
+          "price": 3.46
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.47
         }
       ]
     },

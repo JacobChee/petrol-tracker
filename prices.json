@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-04-22T06:23:45.319094+00:00",
+  "generated_at": "2026-04-23T06:28:26.657065+00:00",
   "fx": {
-    "rate": 0.3218,
-    "date": "2026-04-21",
+    "rate": 0.32226,
+    "date": "2026-04-22",
     "source": "frankfurter.app"
   },
   "malaysia": {
-    "date": "2026-04-16",
-    "ron95": 4.02,
-    "ron97": 5.1,
-    "diesel": 5.97,
+    "date": "2026-04-23",
+    "ron95": 3.87,
+    "ron97": 4.85,
+    "diesel": 5.12,
     "source": "api.data.gov.my",
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-04-22",
+    "date": "2026-04-23",
     "prices": {
       "ron92": [
         {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-02T06:31:07.462588+00:00",
+  "generated_at": "2026-05-03T07:29:39.343510+00:00",
   "fx": {
     "rate": 0.32146,
     "date": "2026-04-30",
@@ -14,7 +14,7 @@
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-05-02",
+    "date": "2026-05-03",
     "prices": {
       "diesel": [
         {

@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-11T02:58:02.251219+00:00",
+  "generated_at": "2026-05-12T02:50:00.002821+00:00",
   "fx": {
-    "rate": 0.32334,
-    "date": "2026-05-08",
+    "rate": 0.3237,
+    "date": "2026-05-11",
     "source": "frankfurter.app"
   },
   "malaysia": {
@@ -14,22 +14,8 @@
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-05-11",
+    "date": "2026-05-12",
     "prices": {
-      "ron92": [
-        {
-          "brand": "SPC",
-          "price": 3.39
-        },
-        {
-          "brand": "Esso",
-          "price": 3.43
-        },
-        {
-          "brand": "Caltex",
-          "price": 3.43
-        }
-      ],
       "premium": [
         {
           "brand": "Sinopec",
@@ -42,6 +28,28 @@
         {
           "brand": "Shell",
           "price": 4.2
+        }
+      ],
+      "diesel": [
+        {
+          "brand": "SPC",
+          "price": 4.32
+        },
+        {
+          "brand": "Sinopec",
+          "price": 4.47
+        },
+        {
+          "brand": "Esso",
+          "price": 4.48
+        },
+        {
+          "brand": "Shell",
+          "price": 4.48
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.48
         }
       ],
       "ron95": [
@@ -66,28 +74,6 @@
           "price": 3.47
         }
       ],
-      "diesel": [
-        {
-          "brand": "SPC",
-          "price": 4.32
-        },
-        {
-          "brand": "Esso",
-          "price": 4.48
-        },
-        {
-          "brand": "Shell",
-          "price": 4.51
-        },
-        {
-          "brand": "Caltex",
-          "price": 4.51
-        },
-        {
-          "brand": "Sinopec",
-          "price": 4.57
-        }
-      ],
       "ron98": [
         {
           "brand": "SPC",
@@ -104,6 +90,20 @@
         {
           "brand": "Shell",
           "price": 3.98
+        }
+      ],
+      "ron92": [
+        {
+          "brand": "SPC",
+          "price": 3.39
+        },
+        {
+          "brand": "Esso",
+          "price": 3.43
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.43
         }
       ]
     },

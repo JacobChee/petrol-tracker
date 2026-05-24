@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T02:50:02.564447+00:00",
+  "generated_at": "2026-05-24T03:28:53.167130+00:00",
   "fx": {
     "rate": 0.32268,
     "date": "2026-05-22",
@@ -14,20 +14,24 @@
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-05-23",
+    "date": "2026-05-24",
     "prices": {
-      "ron92": [
+      "ron98": [
         {
           "brand": "SPC",
-          "price": 3.39
+          "price": 3.93
+        },
+        {
+          "brand": "Sinopec",
+          "price": 3.97
         },
         {
           "brand": "Esso",
-          "price": 3.43
+          "price": 3.98
         },
         {
-          "brand": "Caltex",
-          "price": 3.43
+          "brand": "Shell",
+          "price": 4.01
         }
       ],
       "diesel": [
@@ -52,6 +56,20 @@
           "price": 4.48
         }
       ],
+      "ron92": [
+        {
+          "brand": "SPC",
+          "price": 3.39
+        },
+        {
+          "brand": "Esso",
+          "price": 3.43
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.43
+        }
+      ],
       "premium": [
         {
           "brand": "Sinopec",
@@ -64,24 +82,6 @@
         {
           "brand": "Shell",
           "price": 4.23
-        }
-      ],
-      "ron98": [
-        {
-          "brand": "SPC",
-          "price": 3.93
-        },
-        {
-          "brand": "Sinopec",
-          "price": 3.97
-        },
-        {
-          "brand": "Esso",
-          "price": 3.98
-        },
-        {
-          "brand": "Shell",
-          "price": 4.01
         }
       ],
       "ron95": [

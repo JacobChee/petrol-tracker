@@ -1,21 +1,39 @@
 {
-  "generated_at": "2026-05-27T03:38:54.694389+00:00",
+  "generated_at": "2026-05-28T02:58:04.381197+00:00",
   "fx": {
-    "rate": 0.32227,
-    "date": "2026-05-26",
+    "rate": 0.32225,
+    "date": "2026-05-27",
     "source": "frankfurter.app"
   },
   "malaysia": {
-    "date": "2026-05-21",
-    "ron95": 4.07,
-    "ron97": 4.85,
-    "diesel": 4.97,
+    "date": "2026-05-28",
+    "ron95": 3.92,
+    "ron97": 4.65,
+    "diesel": 4.87,
     "source": "api.data.gov.my",
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-05-27",
+    "date": "2026-05-28",
     "prices": {
+      "ron98": [
+        {
+          "brand": "SPC",
+          "price": 3.93
+        },
+        {
+          "brand": "Sinopec",
+          "price": 3.97
+        },
+        {
+          "brand": "Esso",
+          "price": 3.98
+        },
+        {
+          "brand": "Shell",
+          "price": 4.01
+        }
+      ],
       "diesel": [
         {
           "brand": "SPC",
@@ -36,38 +54,6 @@
         {
           "brand": "Caltex",
           "price": 4.48
-        }
-      ],
-      "premium": [
-        {
-          "brand": "Sinopec",
-          "price": 4.1
-        },
-        {
-          "brand": "Caltex",
-          "price": 4.16
-        },
-        {
-          "brand": "Shell",
-          "price": 4.23
-        }
-      ],
-      "ron98": [
-        {
-          "brand": "SPC",
-          "price": 3.93
-        },
-        {
-          "brand": "Sinopec",
-          "price": 3.97
-        },
-        {
-          "brand": "Esso",
-          "price": 3.98
-        },
-        {
-          "brand": "Shell",
-          "price": 4.01
         }
       ],
       "ron92": [
@@ -104,6 +90,20 @@
         {
           "brand": "Shell",
           "price": 3.49
+        }
+      ],
+      "premium": [
+        {
+          "brand": "Sinopec",
+          "price": 4.1
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.16
+        },
+        {
+          "brand": "Shell",
+          "price": 4.23
         }
       ]
     },

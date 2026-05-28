@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-28T02:58:04.381197+00:00",
+  "generated_at": "2026-05-28T05:06:46.427019+00:00",
   "fx": {
-    "rate": 0.32225,
-    "date": "2026-05-27",
-    "source": "frankfurter.app"
+    "rate": 0.316,
+    "date": "fallback",
+    "source": "hardcoded-fallback"
   },
   "malaysia": {
     "date": "2026-05-28",
@@ -34,26 +34,18 @@
           "price": 4.01
         }
       ],
-      "diesel": [
-        {
-          "brand": "SPC",
-          "price": 4.32
-        },
+      "premium": [
         {
           "brand": "Sinopec",
-          "price": 4.41
-        },
-        {
-          "brand": "Shell",
-          "price": 4.45
-        },
-        {
-          "brand": "Esso",
-          "price": 4.48
+          "price": 4.1
         },
         {
           "brand": "Caltex",
-          "price": 4.48
+          "price": 4.16
+        },
+        {
+          "brand": "Shell",
+          "price": 4.23
         }
       ],
       "ron92": [
@@ -92,18 +84,26 @@
           "price": 3.49
         }
       ],
-      "premium": [
+      "diesel": [
         {
-          "brand": "Sinopec",
-          "price": 4.1
+          "brand": "SPC",
+          "price": 4.32
         },
         {
-          "brand": "Caltex",
-          "price": 4.16
+          "brand": "Sinopec",
+          "price": 4.41
         },
         {
           "brand": "Shell",
-          "price": 4.23
+          "price": 4.45
+        },
+        {
+          "brand": "Esso",
+          "price": 4.48
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.48
         }
       ]
     },
@@ -112,6 +112,7 @@
     "fallback_reason": "petrolprice.sg: price table not found"
   },
   "errors": [
+    "FX fetch failed: 520 Server Error: <none> for url: https://api.frankfurter.dev/v1/latest?from=MYR&to=SGD",
     "petrolprice.sg scraper broke \u2014 used motorist.sg fallback. Reason: petrolprice.sg: price table not found"
   ]
 }

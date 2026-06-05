@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-04T05:53:15.623897+00:00",
+  "generated_at": "2026-06-05T03:36:51.937549+00:00",
   "fx": {
-    "rate": 0.32096,
-    "date": "2026-06-03",
+    "rate": 0.3196,
+    "date": "2026-06-04",
     "source": "frankfurter.app"
   },
   "malaysia": {
@@ -14,7 +14,7 @@
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-06-04",
+    "date": "2026-06-05",
     "prices": {
       "ron98": [
         {
@@ -32,6 +32,42 @@
         {
           "brand": "Shell",
           "price": 3.98
+        }
+      ],
+      "premium": [
+        {
+          "brand": "Sinopec",
+          "price": 4.1
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.16
+        },
+        {
+          "brand": "Shell",
+          "price": 4.2
+        }
+      ],
+      "ron95": [
+        {
+          "brand": "SPC",
+          "price": 3.42
+        },
+        {
+          "brand": "Esso",
+          "price": 3.46
+        },
+        {
+          "brand": "Shell",
+          "price": 3.46
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.46
+        },
+        {
+          "brand": "Sinopec",
+          "price": 3.46
         }
       ],
       "diesel": [
@@ -68,42 +104,6 @@
         {
           "brand": "Caltex",
           "price": 3.43
-        }
-      ],
-      "ron95": [
-        {
-          "brand": "SPC",
-          "price": 3.42
-        },
-        {
-          "brand": "Esso",
-          "price": 3.46
-        },
-        {
-          "brand": "Shell",
-          "price": 3.46
-        },
-        {
-          "brand": "Caltex",
-          "price": 3.46
-        },
-        {
-          "brand": "Sinopec",
-          "price": 3.46
-        }
-      ],
-      "premium": [
-        {
-          "brand": "Sinopec",
-          "price": 4.1
-        },
-        {
-          "brand": "Caltex",
-          "price": 4.16
-        },
-        {
-          "brand": "Shell",
-          "price": 4.2
         }
       ]
     },

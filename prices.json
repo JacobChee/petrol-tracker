@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-07T03:43:38.484140+00:00",
+  "generated_at": "2026-06-08T03:52:44.493713+00:00",
   "fx": {
-    "rate": 0.316,
-    "date": "fallback",
-    "source": "hardcoded-fallback"
+    "rate": 0.31862,
+    "date": "2026-06-05",
+    "source": "frankfurter.app"
   },
   "malaysia": {
     "date": "2026-06-04",
@@ -14,22 +14,8 @@
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-06-07",
+    "date": "2026-06-08",
     "prices": {
-      "premium": [
-        {
-          "brand": "Sinopec",
-          "price": 4.1
-        },
-        {
-          "brand": "Caltex",
-          "price": 4.16
-        },
-        {
-          "brand": "Shell",
-          "price": 4.2
-        }
-      ],
       "ron95": [
         {
           "brand": "SPC",
@@ -66,24 +52,6 @@
           "price": 3.43
         }
       ],
-      "ron98": [
-        {
-          "brand": "SPC",
-          "price": 3.93
-        },
-        {
-          "brand": "Sinopec",
-          "price": 3.97
-        },
-        {
-          "brand": "Esso",
-          "price": 3.98
-        },
-        {
-          "brand": "Shell",
-          "price": 3.98
-        }
-      ],
       "diesel": [
         {
           "brand": "SPC",
@@ -105,6 +73,38 @@
           "brand": "Caltex",
           "price": 4.37
         }
+      ],
+      "premium": [
+        {
+          "brand": "Sinopec",
+          "price": 4.1
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.16
+        },
+        {
+          "brand": "Shell",
+          "price": 4.2
+        }
+      ],
+      "ron98": [
+        {
+          "brand": "SPC",
+          "price": 3.93
+        },
+        {
+          "brand": "Sinopec",
+          "price": 3.97
+        },
+        {
+          "brand": "Esso",
+          "price": 3.98
+        },
+        {
+          "brand": "Shell",
+          "price": 3.98
+        }
       ]
     },
     "source": "motorist.sg",
@@ -112,7 +112,6 @@
     "fallback_reason": "petrolprice.sg: price table not found"
   },
   "errors": [
-    "FX fetch failed: HTTPSConnectionPool(host='api.frankfurter.dev', port=443): Read timed out. (read timeout=10)",
     "petrolprice.sg scraper broke \u2014 used motorist.sg fallback. Reason: petrolprice.sg: price table not found"
   ]
 }

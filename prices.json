@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-09T02:56:29.536085+00:00",
+  "generated_at": "2026-06-10T03:34:43.601751+00:00",
   "fx": {
-    "rate": 0.31601,
-    "date": "2026-06-08",
+    "rate": 0.31646,
+    "date": "2026-06-09",
     "source": "frankfurter.app"
   },
   "malaysia": {
@@ -14,28 +14,24 @@
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-06-09",
+    "date": "2026-06-10",
     "prices": {
-      "diesel": [
+      "ron98": [
         {
           "brand": "SPC",
-          "price": 4.32
+          "price": 3.93
         },
         {
           "brand": "Sinopec",
-          "price": 4.36
+          "price": 3.97
         },
         {
           "brand": "Esso",
-          "price": 4.37
+          "price": 3.98
         },
         {
           "brand": "Shell",
-          "price": 4.37
-        },
-        {
-          "brand": "Caltex",
-          "price": 4.37
+          "price": 3.98
         }
       ],
       "ron95": [
@@ -60,24 +56,6 @@
           "price": 3.46
         }
       ],
-      "ron98": [
-        {
-          "brand": "SPC",
-          "price": 3.93
-        },
-        {
-          "brand": "Sinopec",
-          "price": 3.97
-        },
-        {
-          "brand": "Esso",
-          "price": 3.98
-        },
-        {
-          "brand": "Shell",
-          "price": 3.98
-        }
-      ],
       "ron92": [
         {
           "brand": "SPC",
@@ -90,6 +68,28 @@
         {
           "brand": "Caltex",
           "price": 3.43
+        }
+      ],
+      "diesel": [
+        {
+          "brand": "SPC",
+          "price": 4.32
+        },
+        {
+          "brand": "Sinopec",
+          "price": 4.36
+        },
+        {
+          "brand": "Esso",
+          "price": 4.37
+        },
+        {
+          "brand": "Shell",
+          "price": 4.37
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.37
         }
       ],
       "premium": [

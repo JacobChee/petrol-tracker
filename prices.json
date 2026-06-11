@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T03:49:57.145118+00:00",
+  "generated_at": "2026-06-11T05:25:27.863605+00:00",
   "fx": {
     "rate": 0.31654,
     "date": "2026-06-10",
@@ -16,20 +16,6 @@
   "singapore": {
     "date": "2026-06-11",
     "prices": {
-      "premium": [
-        {
-          "brand": "Sinopec",
-          "price": 4.1
-        },
-        {
-          "brand": "Caltex",
-          "price": 4.16
-        },
-        {
-          "brand": "Shell",
-          "price": 4.2
-        }
-      ],
       "ron98": [
         {
           "brand": "SPC",
@@ -104,6 +90,20 @@
         {
           "brand": "Caltex",
           "price": 4.37
+        }
+      ],
+      "premium": [
+        {
+          "brand": "Sinopec",
+          "price": 4.1
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.16
+        },
+        {
+          "brand": "Shell",
+          "price": 4.2
         }
       ]
     },

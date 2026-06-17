@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-16T03:57:23.130237+00:00",
+  "generated_at": "2026-06-17T03:58:13.778399+00:00",
   "fx": {
-    "rate": 0.31654,
-    "date": "2026-06-15",
+    "rate": 0.3152,
+    "date": "2026-06-16",
     "source": "frankfurter.app"
   },
   "malaysia": {
@@ -14,44 +14,8 @@
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-06-16",
+    "date": "2026-06-17",
     "prices": {
-      "diesel": [
-        {
-          "brand": "Sinopec",
-          "price": 4.31
-        },
-        {
-          "brand": "Esso",
-          "price": 4.32
-        },
-        {
-          "brand": "Shell",
-          "price": 4.32
-        },
-        {
-          "brand": "SPC",
-          "price": 4.32
-        },
-        {
-          "brand": "Caltex",
-          "price": 4.32
-        }
-      ],
-      "ron92": [
-        {
-          "brand": "SPC",
-          "price": 3.39
-        },
-        {
-          "brand": "Esso",
-          "price": 3.43
-        },
-        {
-          "brand": "Caltex",
-          "price": 3.43
-        }
-      ],
       "ron98": [
         {
           "brand": "SPC",
@@ -84,6 +48,20 @@
           "price": 4.2
         }
       ],
+      "ron92": [
+        {
+          "brand": "SPC",
+          "price": 3.39
+        },
+        {
+          "brand": "Esso",
+          "price": 3.43
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.43
+        }
+      ],
       "ron95": [
         {
           "brand": "SPC",
@@ -104,6 +82,28 @@
         {
           "brand": "Sinopec",
           "price": 3.46
+        }
+      ],
+      "diesel": [
+        {
+          "brand": "SPC",
+          "price": 4.17
+        },
+        {
+          "brand": "Shell",
+          "price": 4.22
+        },
+        {
+          "brand": "Sinopec",
+          "price": 4.31
+        },
+        {
+          "brand": "Esso",
+          "price": 4.32
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.32
         }
       ]
     },

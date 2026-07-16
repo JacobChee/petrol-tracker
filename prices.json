@@ -1,21 +1,43 @@
 {
-  "generated_at": "2026-07-15T02:14:12.436248+00:00",
+  "generated_at": "2026-07-16T02:26:46.045545+00:00",
   "fx": {
-    "rate": 0.31699,
-    "date": "2026-07-14",
+    "rate": 0.31687,
+    "date": "2026-07-15",
     "source": "frankfurter.app"
   },
   "malaysia": {
-    "date": "2026-07-09",
-    "ron95": 3.37,
+    "date": "2026-07-16",
+    "ron95": 3.42,
     "ron97": 4.0,
-    "diesel": 3.97,
+    "diesel": 4.07,
     "source": "api.data.gov.my",
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-07-15",
+    "date": "2026-07-16",
     "prices": {
+      "ron95": [
+        {
+          "brand": "SPC",
+          "price": 3.36
+        },
+        {
+          "brand": "Esso",
+          "price": 3.37
+        },
+        {
+          "brand": "Shell",
+          "price": 3.37
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.37
+        },
+        {
+          "brand": "Sinopec",
+          "price": 3.37
+        }
+      ],
       "ron98": [
         {
           "brand": "SPC",
@@ -32,20 +54,6 @@
         {
           "brand": "Shell",
           "price": 3.89
-        }
-      ],
-      "ron92": [
-        {
-          "brand": "Esso",
-          "price": 3.34
-        },
-        {
-          "brand": "SPC",
-          "price": 3.34
-        },
-        {
-          "brand": "Caltex",
-          "price": 3.34
         }
       ],
       "diesel": [
@@ -70,26 +78,18 @@
           "price": 4.05
         }
       ],
-      "ron95": [
-        {
-          "brand": "SPC",
-          "price": 3.36
-        },
+      "ron92": [
         {
           "brand": "Esso",
-          "price": 3.37
+          "price": 3.34
         },
         {
-          "brand": "Shell",
-          "price": 3.37
+          "brand": "SPC",
+          "price": 3.34
         },
         {
           "brand": "Caltex",
-          "price": 3.37
-        },
-        {
-          "brand": "Sinopec",
-          "price": 3.37
+          "price": 3.34
         }
       ],
       "premium": [

@@ -1,13 +1,5 @@
 [
   {
-    "date": "2026-01-30",
-    "sg_ron98_cheapest": 2.72,
-    "jb_ron97_myr": 3.92,
-    "jb_ron97_sgd": 1.194,
-    "fx": 0.3046,
-    "gap_sgd": 1.526
-  },
-  {
     "date": "2026-01-31",
     "sg_ron98_cheapest": 2.73,
     "jb_ron97_myr": 3.92,
@@ -1438,5 +1430,13 @@
     "jb_ron97_sgd": 1.328,
     "fx": 0.31608,
     "gap_sgd": 2.552
+  },
+  {
+    "date": "2026-07-30",
+    "sg_ron98_cheapest": 3.88,
+    "jb_ron97_myr": 4.4,
+    "jb_ron97_sgd": 1.391,
+    "fx": 0.31608,
+    "gap_sgd": 2.489
   }
 ]

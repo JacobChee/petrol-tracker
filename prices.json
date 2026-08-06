@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-06T02:24:32.334130+00:00",
+  "generated_at": "2026-08-06T04:08:00.272217+00:00",
   "fx": {
-    "rate": 0.31308,
-    "date": "2026-08-05",
-    "source": "frankfurter.app"
+    "rate": 0.316,
+    "date": "fallback",
+    "source": "hardcoded-fallback"
   },
   "malaysia": {
     "date": "2026-08-06",
@@ -16,6 +16,20 @@
   "singapore": {
     "date": "2026-08-06",
     "prices": {
+      "premium": [
+        {
+          "brand": "Sinopec",
+          "price": 4.01
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.07
+        },
+        {
+          "brand": "Shell",
+          "price": 4.11
+        }
+      ],
       "ron98": [
         {
           "brand": "SPC",
@@ -32,34 +46,6 @@
         {
           "brand": "Shell",
           "price": 3.89
-        }
-      ],
-      "premium": [
-        {
-          "brand": "Sinopec",
-          "price": 4.01
-        },
-        {
-          "brand": "Caltex",
-          "price": 4.07
-        },
-        {
-          "brand": "Shell",
-          "price": 4.11
-        }
-      ],
-      "ron92": [
-        {
-          "brand": "Esso",
-          "price": 3.34
-        },
-        {
-          "brand": "SPC",
-          "price": 3.34
-        },
-        {
-          "brand": "Caltex",
-          "price": 3.34
         }
       ],
       "ron95": [
@@ -105,6 +91,20 @@
           "brand": "Caltex",
           "price": 4.05
         }
+      ],
+      "ron92": [
+        {
+          "brand": "Esso",
+          "price": 3.34
+        },
+        {
+          "brand": "SPC",
+          "price": 3.34
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.34
+        }
       ]
     },
     "source": "motorist.sg",
@@ -112,6 +112,7 @@
     "fallback_reason": "petrolprice.sg: price table not found"
   },
   "errors": [
+    "FX fetch failed: HTTPSConnectionPool(host='api.frankfurter.dev', port=443): Read timed out. (read timeout=10)",
     "petrolprice.sg scraper broke \u2014 used motorist.sg fallback. Reason: petrolprice.sg: price table not found"
   ]
 }

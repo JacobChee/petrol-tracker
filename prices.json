@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T07:20:18.272641+00:00",
+  "generated_at": "2026-08-27T10:51:49.325321+00:00",
   "fx": {
     "rate": 0.31536,
     "date": "2026-08-26",
@@ -16,34 +16,6 @@
   "singapore": {
     "date": "2026-08-27",
     "prices": {
-      "ron92": [
-        {
-          "brand": "Esso",
-          "price": 3.34
-        },
-        {
-          "brand": "SPC",
-          "price": 3.34
-        },
-        {
-          "brand": "Caltex",
-          "price": 3.34
-        }
-      ],
-      "premium": [
-        {
-          "brand": "Sinopec",
-          "price": 4.01
-        },
-        {
-          "brand": "Caltex",
-          "price": 4.07
-        },
-        {
-          "brand": "Shell",
-          "price": 4.11
-        }
-      ],
       "diesel": [
         {
           "brand": "SPC",
@@ -64,6 +36,38 @@
         {
           "brand": "Caltex",
           "price": 4.05
+        }
+      ],
+      "ron92": [
+        {
+          "brand": "Esso",
+          "price": 3.34
+        },
+        {
+          "brand": "SPC",
+          "price": 3.34
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.34
+        }
+      ],
+      "ron98": [
+        {
+          "brand": "SPC",
+          "price": 3.88
+        },
+        {
+          "brand": "Sinopec",
+          "price": 3.88
+        },
+        {
+          "brand": "Esso",
+          "price": 3.89
+        },
+        {
+          "brand": "Shell",
+          "price": 3.89
         }
       ],
       "ron95": [
@@ -88,22 +92,18 @@
           "price": 3.37
         }
       ],
-      "ron98": [
-        {
-          "brand": "SPC",
-          "price": 3.88
-        },
+      "premium": [
         {
           "brand": "Sinopec",
-          "price": 3.88
+          "price": 4.01
         },
         {
-          "brand": "Esso",
-          "price": 3.89
+          "brand": "Caltex",
+          "price": 4.07
         },
         {
           "brand": "Shell",
-          "price": 3.89
+          "price": 4.11
         }
       ]
     },

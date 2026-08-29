@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-28T09:34:44.021274+00:00",
+  "generated_at": "2026-08-29T05:40:13.005546+00:00",
   "fx": {
-    "rate": 0.31522,
-    "date": "2026-08-27",
+    "rate": 0.31578,
+    "date": "2026-08-28",
     "source": "frankfurter.app"
   },
   "malaysia": {
@@ -14,7 +14,7 @@
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-08-28",
+    "date": "2026-08-29",
     "prices": {
       "premium": [
         {
@@ -30,18 +30,22 @@
           "price": 4.11
         }
       ],
-      "ron92": [
-        {
-          "brand": "Esso",
-          "price": 3.34
-        },
+      "ron98": [
         {
           "brand": "SPC",
-          "price": 3.34
+          "price": 3.88
         },
         {
-          "brand": "Caltex",
-          "price": 3.34
+          "brand": "Sinopec",
+          "price": 3.88
+        },
+        {
+          "brand": "Esso",
+          "price": 3.89
+        },
+        {
+          "brand": "Shell",
+          "price": 3.89
         }
       ],
       "ron95": [
@@ -88,22 +92,18 @@
           "price": 4.05
         }
       ],
-      "ron98": [
-        {
-          "brand": "SPC",
-          "price": 3.88
-        },
-        {
-          "brand": "Sinopec",
-          "price": 3.88
-        },
+      "ron92": [
         {
           "brand": "Esso",
-          "price": 3.89
+          "price": 3.34
         },
         {
-          "brand": "Shell",
-          "price": 3.89
+          "brand": "SPC",
+          "price": 3.34
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.34
         }
       ]
     },

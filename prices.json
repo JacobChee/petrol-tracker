@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T04:12:23.570087+00:00",
+  "generated_at": "2026-10-01T06:46:48.332029+00:00",
   "fx": {
     "rate": 0.3132,
     "date": "2026-09-30",
@@ -34,6 +34,20 @@
           "price": 4.06
         }
       ],
+      "premium": [
+        {
+          "brand": "Sinopec",
+          "price": 4.13
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.24
+        },
+        {
+          "brand": "Shell",
+          "price": 4.28
+        }
+      ],
       "diesel": [
         {
           "brand": "SPC",
@@ -54,20 +68,6 @@
         {
           "brand": "Caltex",
           "price": 4.07
-        }
-      ],
-      "premium": [
-        {
-          "brand": "Sinopec",
-          "price": 4.13
-        },
-        {
-          "brand": "Caltex",
-          "price": 4.24
-        },
-        {
-          "brand": "Shell",
-          "price": 4.28
         }
       ],
       "ron92": [

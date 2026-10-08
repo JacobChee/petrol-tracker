@@ -1,21 +1,39 @@
 {
-  "generated_at": "2026-10-07T04:21:31.116029+00:00",
+  "generated_at": "2026-10-08T04:33:02.326731+00:00",
   "fx": {
-    "rate": 0.31264,
-    "date": "2026-10-06",
+    "rate": 0.31321,
+    "date": "2026-10-07",
     "source": "frankfurter.app"
   },
   "malaysia": {
-    "date": "2026-10-01",
-    "ron95": 4.52,
-    "ron97": 5.0,
+    "date": "2026-10-08",
+    "ron95": 4.67,
+    "ron97": 5.15,
     "diesel": 5.27,
     "source": "api.data.gov.my",
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-10-07",
+    "date": "2026-10-08",
     "prices": {
+      "ron98": [
+        {
+          "brand": "SPC",
+          "price": 4.05
+        },
+        {
+          "brand": "Sinopec",
+          "price": 4.05
+        },
+        {
+          "brand": "Esso",
+          "price": 4.06
+        },
+        {
+          "brand": "Shell",
+          "price": 4.06
+        }
+      ],
       "ron95": [
         {
           "brand": "SPC",
@@ -38,38 +56,6 @@
           "price": 3.54
         }
       ],
-      "ron98": [
-        {
-          "brand": "SPC",
-          "price": 4.05
-        },
-        {
-          "brand": "Sinopec",
-          "price": 4.05
-        },
-        {
-          "brand": "Esso",
-          "price": 4.06
-        },
-        {
-          "brand": "Shell",
-          "price": 4.06
-        }
-      ],
-      "premium": [
-        {
-          "brand": "Sinopec",
-          "price": 4.18
-        },
-        {
-          "brand": "Caltex",
-          "price": 4.24
-        },
-        {
-          "brand": "Shell",
-          "price": 4.28
-        }
-      ],
       "diesel": [
         {
           "brand": "SPC",
@@ -90,6 +76,20 @@
         {
           "brand": "Caltex",
           "price": 4.07
+        }
+      ],
+      "premium": [
+        {
+          "brand": "Sinopec",
+          "price": 4.18
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.24
+        },
+        {
+          "brand": "Shell",
+          "price": 4.28
         }
       ],
       "ron92": [

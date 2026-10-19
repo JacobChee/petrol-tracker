@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T03:03:34.926363+00:00",
+  "generated_at": "2026-10-19T03:17:33.008102+00:00",
   "fx": {
     "rate": 0.31342,
     "date": "2026-10-16",
@@ -14,28 +14,20 @@
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-10-18",
+    "date": "2026-10-19",
     "prices": {
-      "ron95": [
+      "ron92": [
         {
           "brand": "SPC",
-          "price": 3.53
+          "price": 3.51
         },
         {
           "brand": "Esso",
-          "price": 3.57
-        },
-        {
-          "brand": "Shell",
-          "price": 3.57
+          "price": 3.54
         },
         {
           "brand": "Caltex",
-          "price": 3.57
-        },
-        {
-          "brand": "Sinopec",
-          "price": 3.57
+          "price": 3.54
         }
       ],
       "ron98": [
@@ -56,18 +48,18 @@
           "price": 4.09
         }
       ],
-      "ron92": [
+      "premium": [
         {
-          "brand": "SPC",
-          "price": 3.51
-        },
-        {
-          "brand": "Esso",
-          "price": 3.54
+          "brand": "Sinopec",
+          "price": 4.21
         },
         {
           "brand": "Caltex",
-          "price": 3.54
+          "price": 4.27
+        },
+        {
+          "brand": "Shell",
+          "price": 4.31
         }
       ],
       "diesel": [
@@ -92,18 +84,26 @@
           "price": 4.07
         }
       ],
-      "premium": [
+      "ron95": [
         {
-          "brand": "Sinopec",
-          "price": 4.21
+          "brand": "SPC",
+          "price": 3.53
         },
         {
-          "brand": "Caltex",
-          "price": 4.27
+          "brand": "Esso",
+          "price": 3.57
         },
         {
           "brand": "Shell",
-          "price": 4.31
+          "price": 3.57
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.57
+        },
+        {
+          "brand": "Sinopec",
+          "price": 3.57
         }
       ]
     },

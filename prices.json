@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T05:09:33.465266+00:00",
+  "generated_at": "2026-11-05T07:38:53.057415+00:00",
   "fx": {
     "rate": 0.31444,
     "date": "2026-11-04",
@@ -16,6 +16,20 @@
   "singapore": {
     "date": "2026-11-05",
     "prices": {
+      "premium": [
+        {
+          "brand": "Sinopec",
+          "price": 4.27
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.3
+        },
+        {
+          "brand": "Shell",
+          "price": 4.37
+        }
+      ],
       "diesel": [
         {
           "brand": "SPC",
@@ -90,20 +104,6 @@
         {
           "brand": "Sinopec",
           "price": 3.63
-        }
-      ],
-      "premium": [
-        {
-          "brand": "Sinopec",
-          "price": 4.27
-        },
-        {
-          "brand": "Caltex",
-          "price": 4.3
-        },
-        {
-          "brand": "Shell",
-          "price": 4.37
         }
       ]
     },

@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-05T07:38:53.057415+00:00",
+  "generated_at": "2026-11-06T05:08:43.484634+00:00",
   "fx": {
-    "rate": 0.31444,
-    "date": "2026-11-04",
+    "rate": 0.31569,
+    "date": "2026-11-05",
     "source": "frankfurter.app"
   },
   "malaysia": {
@@ -14,7 +14,7 @@
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-11-05",
+    "date": "2026-11-06",
     "prices": {
       "premium": [
         {
@@ -28,28 +28,6 @@
         {
           "brand": "Shell",
           "price": 4.37
-        }
-      ],
-      "diesel": [
-        {
-          "brand": "SPC",
-          "price": 4.0
-        },
-        {
-          "brand": "Sinopec",
-          "price": 4.01
-        },
-        {
-          "brand": "Caltex",
-          "price": 4.04
-        },
-        {
-          "brand": "Esso",
-          "price": 4.07
-        },
-        {
-          "brand": "Shell",
-          "price": 4.07
         }
       ],
       "ron98": [
@@ -68,20 +46,6 @@
         {
           "brand": "Shell",
           "price": 4.15
-        }
-      ],
-      "ron92": [
-        {
-          "brand": "SPC",
-          "price": 3.54
-        },
-        {
-          "brand": "Caltex",
-          "price": 3.57
-        },
-        {
-          "brand": "Esso",
-          "price": 3.6
         }
       ],
       "ron95": [
@@ -104,6 +68,42 @@
         {
           "brand": "Sinopec",
           "price": 3.63
+        }
+      ],
+      "ron92": [
+        {
+          "brand": "SPC",
+          "price": 3.54
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.57
+        },
+        {
+          "brand": "Esso",
+          "price": 3.6
+        }
+      ],
+      "diesel": [
+        {
+          "brand": "SPC",
+          "price": 4.0
+        },
+        {
+          "brand": "Sinopec",
+          "price": 4.01
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.04
+        },
+        {
+          "brand": "Esso",
+          "price": 4.07
+        },
+        {
+          "brand": "Shell",
+          "price": 4.07
         }
       ]
     },

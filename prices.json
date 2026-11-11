@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-10T05:57:36.510922+00:00",
+  "generated_at": "2026-11-11T04:44:34.470264+00:00",
   "fx": {
-    "rate": 0.31537,
-    "date": "2026-11-09",
+    "rate": 0.31517,
+    "date": "2026-11-10",
     "source": "frankfurter.app"
   },
   "malaysia": {
@@ -14,8 +14,30 @@
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-11-10",
+    "date": "2026-11-11",
     "prices": {
+      "ron95": [
+        {
+          "brand": "SPC",
+          "price": 3.56
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.6
+        },
+        {
+          "brand": "Esso",
+          "price": 3.63
+        },
+        {
+          "brand": "Shell",
+          "price": 3.63
+        },
+        {
+          "brand": "Sinopec",
+          "price": 3.63
+        }
+      ],
       "ron92": [
         {
           "brand": "SPC",
@@ -52,6 +74,20 @@
           "price": 4.07
         }
       ],
+      "premium": [
+        {
+          "brand": "Sinopec",
+          "price": 4.27
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.3
+        },
+        {
+          "brand": "Shell",
+          "price": 4.37
+        }
+      ],
       "ron98": [
         {
           "brand": "SPC",
@@ -68,42 +104,6 @@
         {
           "brand": "Shell",
           "price": 4.15
-        }
-      ],
-      "premium": [
-        {
-          "brand": "Sinopec",
-          "price": 4.27
-        },
-        {
-          "brand": "Caltex",
-          "price": 4.3
-        },
-        {
-          "brand": "Shell",
-          "price": 4.37
-        }
-      ],
-      "ron95": [
-        {
-          "brand": "SPC",
-          "price": 3.56
-        },
-        {
-          "brand": "Caltex",
-          "price": 3.6
-        },
-        {
-          "brand": "Esso",
-          "price": 3.63
-        },
-        {
-          "brand": "Shell",
-          "price": 3.63
-        },
-        {
-          "brand": "Sinopec",
-          "price": 3.63
         }
       ]
     },

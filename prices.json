@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T05:47:07.383049+00:00",
+  "generated_at": "2026-11-12T07:55:26.280056+00:00",
   "fx": {
     "rate": 0.31485,
     "date": "2026-11-11",
@@ -16,6 +16,38 @@
   "singapore": {
     "date": "2026-11-12",
     "prices": {
+      "ron92": [
+        {
+          "brand": "SPC",
+          "price": 3.54
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.57
+        },
+        {
+          "brand": "Esso",
+          "price": 3.6
+        }
+      ],
+      "ron98": [
+        {
+          "brand": "SPC",
+          "price": 4.08
+        },
+        {
+          "brand": "Sinopec",
+          "price": 4.14
+        },
+        {
+          "brand": "Esso",
+          "price": 4.15
+        },
+        {
+          "brand": "Shell",
+          "price": 4.15
+        }
+      ],
       "ron95": [
         {
           "brand": "SPC",
@@ -38,22 +70,18 @@
           "price": 3.63
         }
       ],
-      "ron98": [
-        {
-          "brand": "SPC",
-          "price": 4.08
-        },
+      "premium": [
         {
           "brand": "Sinopec",
-          "price": 4.14
+          "price": 4.27
         },
         {
-          "brand": "Esso",
-          "price": 4.15
+          "brand": "Caltex",
+          "price": 4.3
         },
         {
           "brand": "Shell",
-          "price": 4.15
+          "price": 4.37
         }
       ],
       "diesel": [
@@ -76,34 +104,6 @@
         {
           "brand": "Shell",
           "price": 4.07
-        }
-      ],
-      "ron92": [
-        {
-          "brand": "SPC",
-          "price": 3.54
-        },
-        {
-          "brand": "Caltex",
-          "price": 3.57
-        },
-        {
-          "brand": "Esso",
-          "price": 3.6
-        }
-      ],
-      "premium": [
-        {
-          "brand": "Sinopec",
-          "price": 4.27
-        },
-        {
-          "brand": "Caltex",
-          "price": 4.3
-        },
-        {
-          "brand": "Shell",
-          "price": 4.37
         }
       ]
     },

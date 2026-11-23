@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T05:07:06.397873+00:00",
+  "generated_at": "2026-11-23T05:48:31.249408+00:00",
   "fx": {
     "rate": 0.3133,
     "date": "2026-11-20",
@@ -14,52 +14,8 @@
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-11-22",
+    "date": "2026-11-23",
     "prices": {
-      "diesel": [
-        {
-          "brand": "Sinopec",
-          "price": 3.98
-        },
-        {
-          "brand": "SPC",
-          "price": 4.0
-        },
-        {
-          "brand": "Esso",
-          "price": 4.04
-        },
-        {
-          "brand": "Shell",
-          "price": 4.04
-        },
-        {
-          "brand": "Caltex",
-          "price": 4.04
-        }
-      ],
-      "ron95": [
-        {
-          "brand": "SPC",
-          "price": 3.56
-        },
-        {
-          "brand": "Esso",
-          "price": 3.6
-        },
-        {
-          "brand": "Shell",
-          "price": 3.6
-        },
-        {
-          "brand": "Caltex",
-          "price": 3.6
-        },
-        {
-          "brand": "Sinopec",
-          "price": 3.6
-        }
-      ],
       "ron98": [
         {
           "brand": "SPC",
@@ -104,6 +60,50 @@
         {
           "brand": "Shell",
           "price": 4.34
+        }
+      ],
+      "diesel": [
+        {
+          "brand": "Sinopec",
+          "price": 3.98
+        },
+        {
+          "brand": "SPC",
+          "price": 4.0
+        },
+        {
+          "brand": "Esso",
+          "price": 4.04
+        },
+        {
+          "brand": "Shell",
+          "price": 4.04
+        },
+        {
+          "brand": "Caltex",
+          "price": 4.04
+        }
+      ],
+      "ron95": [
+        {
+          "brand": "SPC",
+          "price": 3.56
+        },
+        {
+          "brand": "Esso",
+          "price": 3.6
+        },
+        {
+          "brand": "Shell",
+          "price": 3.6
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.6
+        },
+        {
+          "brand": "Sinopec",
+          "price": 3.6
         }
       ]
     },

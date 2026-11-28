@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-27T06:45:54.497155+00:00",
+  "generated_at": "2026-11-28T06:19:48.473503+00:00",
   "fx": {
-    "rate": 0.31341,
-    "date": "2026-11-26",
+    "rate": 0.31286,
+    "date": "2026-11-27",
     "source": "frankfurter.app"
   },
   "malaysia": {
@@ -14,8 +14,22 @@
     "note": "Unsubsidised rates. RON95 subsidised rate (RM1.99) not applicable to SG-registered vehicles."
   },
   "singapore": {
-    "date": "2026-11-27",
+    "date": "2026-11-28",
     "prices": {
+      "ron92": [
+        {
+          "brand": "SPC",
+          "price": 3.54
+        },
+        {
+          "brand": "Esso",
+          "price": 3.57
+        },
+        {
+          "brand": "Caltex",
+          "price": 3.57
+        }
+      ],
       "ron95": [
         {
           "brand": "Shell",
@@ -38,22 +52,18 @@
           "price": 3.6
         }
       ],
-      "ron98": [
+      "premium": [
         {
           "brand": "Sinopec",
-          "price": 4.07
+          "price": 4.2
         },
         {
           "brand": "Shell",
-          "price": 4.08
+          "price": 4.3
         },
         {
-          "brand": "SPC",
-          "price": 4.08
-        },
-        {
-          "brand": "Esso",
-          "price": 4.12
+          "brand": "Caltex",
+          "price": 4.3
         }
       ],
       "diesel": [
@@ -78,32 +88,22 @@
           "price": 4.04
         }
       ],
-      "premium": [
+      "ron98": [
         {
           "brand": "Sinopec",
-          "price": 4.2
+          "price": 4.07
         },
         {
           "brand": "Shell",
-          "price": 4.3
+          "price": 4.08
         },
         {
-          "brand": "Caltex",
-          "price": 4.3
-        }
-      ],
-      "ron92": [
-        {
           "brand": "SPC",
-          "price": 3.54
+          "price": 4.08
         },
         {
           "brand": "Esso",
-          "price": 3.57
-        },
-        {
-          "brand": "Caltex",
-          "price": 3.57
+          "price": 4.12
         }
       ]
     },
